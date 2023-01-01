@@ -7,6 +7,7 @@ import { Data } from "./data";
 import { AuthenticationStackParamsList } from "../../navigation/onboarding";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from "../../constants";
+import { useMediaQuery } from "native-base";
 
 type WelcomeScreenProps = NativeStackScreenProps<
   AuthenticationStackParamsList,
@@ -15,7 +16,10 @@ type WelcomeScreenProps = NativeStackScreenProps<
 
 export const Welcome = ({ navigation }: WelcomeScreenProps) => {
   const [index, setIndex] = useState(0);
-
+  const [isSmallScreen] = useMediaQuery({
+    minHeight: 200,
+    maxHeight: 400,
+  });
   const handleNext = () => {
     if (index < Data.length - 1) {
       setIndex((prev) => prev + 1);
@@ -62,7 +66,14 @@ export const Welcome = ({ navigation }: WelcomeScreenProps) => {
           </View>
         ))}
       </Swiper>
-      <View style={{ width: "90%", marginLeft: "auto", marginRight: "auto" }}>
+      <View
+        style={{
+          width: "90%",
+          paddingBottom: 10,
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+      >
         <Button
           title={index === Data.length - 1 ? "Get started" : "Next"}
           onPress={handleNext}
@@ -73,7 +84,9 @@ export const Welcome = ({ navigation }: WelcomeScreenProps) => {
 };
 
 const styles = StyleSheet.create({
-  wrapper: {},
+  wrapper: {
+    
+  },
   view: {
     paddingTop: 70,
     display: "flex",
@@ -81,11 +94,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   texts: {
-    paddingTop: 30,
   },
   title: {
     textAlign: "center",
-    marginTop: 40,
+    marginTop: 20,
     lineHeight: 50,
     fontSize: 28,
   },

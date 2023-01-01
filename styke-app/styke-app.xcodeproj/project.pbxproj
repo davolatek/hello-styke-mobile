@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047D90F62B961457007911A9 /* styke_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D90F52B961457007911A9 /* styke_appApp.swift */; };
+		047D90F82B961457007911A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D90F72B961457007911A9 /* ContentView.swift */; };
+		047D90FA2B96145D007911A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D90F92B96145D007911A9 /* Assets.xcassets */; };
+		047D90FE2B96145D007911A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D90FD2B96145D007911A9 /* Preview Assets.xcassets */; };
+		047D91082B96145D007911A9 /* styke_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D91072B96145D007911A9 /* styke_appTests.swift */; };
+		047D91122B96145D007911A9 /* styke_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D91112B96145D007911A9 /* styke_appUITests.swift */; };
+		047D91142B96145D007911A9 /* styke_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D91132B96145D007911A9 /* styke_appUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		047D91042B96145D007911A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047D90EA2B961457007911A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047D90F12B961457007911A9;
+			remoteInfo = "styke-app";
+		};
+		047D910E2B96145D007911A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 047D90EA2B961457007911A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 047D90F12B961457007911A9;
+			remoteInfo = "styke-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		047D90F22B961457007911A9 /* styke-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "styke-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		047D90F52B961457007911A9 /* styke_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styke_appApp.swift; sourceTree = "<group>"; };
+		047D90F72B961457007911A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		047D90F92B96145D007911A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		047D90FB2B96145D007911A9 /* styke_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = styke_app.entitlements; sourceTree = "<group>"; };
+		047D90FD2B96145D007911A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		047D91032B96145D007911A9 /* styke-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "styke-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		047D91072B96145D007911A9 /* styke_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styke_appTests.swift; sourceTree = "<group>"; };
+		047D910D2B96145D007911A9 /* styke-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "styke-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		047D91112B96145D007911A9 /* styke_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styke_appUITests.swift; sourceTree = "<group>"; };
+		047D91132B96145D007911A9 /* styke_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styke_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		047D90EF2B961457007911A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D91002B96145D007911A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D910A2B96145D007911A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047D90E92B961457007911A9 = {
+			isa = PBXGroup;
+			children = (
+				047D90F42B961457007911A9 /* styke-app */,
+				047D91062B96145D007911A9 /* styke-appTests */,
+				047D91102B96145D007911A9 /* styke-appUITests */,
+				047D90F32B961457007911A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		047D90F32B961457007911A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				047D90F22B961457007911A9 /* styke-app.app */,
+				047D91032B96145D007911A9 /* styke-appTests.xctest */,
+				047D910D2B96145D007911A9 /* styke-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		047D90F42B961457007911A9 /* styke-app */ = {
+			isa = PBXGroup;
+			children = (
+				047D90F52B961457007911A9 /* styke_appApp.swift */,
+				047D90F72B961457007911A9 /* ContentView.swift */,
+				047D90F92B96145D007911A9 /* Assets.xcassets */,
+				047D90FB2B96145D007911A9 /* styke_app.entitlements */,
+				047D90FC2B96145D007911A9 /* Preview Content */,
+			);
+			path = "styke-app";
+			sourceTree = "<group>";
+		};
+		047D90FC2B96145D007911A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				047D90FD2B96145D007911A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		047D91062B96145D007911A9 /* styke-appTests */ = {
+			isa = PBXGroup;
+			children = (
+				047D91072B96145D007911A9 /* styke_appTests.swift */,
+			);
+			path = "styke-appTests";
+			sourceTree = "<group>";
+		};
+		047D91102B96145D007911A9 /* styke-appUITests */ = {
+			isa = PBXGroup;
+			children = (
+				047D91112B96145D007911A9 /* styke_appUITests.swift */,
+				047D91132B96145D007911A9 /* styke_appUITestsLaunchTests.swift */,
+			);
+			path = "styke-appUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		047D90F12B961457007911A9 /* styke-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047D91172B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-app" */;
+			buildPhases = (
+				047D90EE2B961457007911A9 /* Sources */,
+				047D90EF2B961457007911A9 /* Frameworks */,
+				047D90F02B961457007911A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "styke-app";
+			productName = "styke-app";
+			productReference = 047D90F22B961457007911A9 /* styke-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		047D91022B96145D007911A9 /* styke-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047D911A2B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-appTests" */;
+			buildPhases = (
+				047D90FF2B96145D007911A9 /* Sources */,
+				047D91002B96145D007911A9 /* Frameworks */,
+				047D91012B96145D007911A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047D91052B96145D007911A9 /* PBXTargetDependency */,
+			);
+			name = "styke-appTests";
+			productName = "styke-appTests";
+			productReference = 047D91032B96145D007911A9 /* styke-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		047D910C2B96145D007911A9 /* styke-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047D911D2B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-appUITests" */;
+			buildPhases = (
+				047D91092B96145D007911A9 /* Sources */,
+				047D910A2B96145D007911A9 /* Frameworks */,
+				047D910B2B96145D007911A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				047D910F2B96145D007911A9 /* PBXTargetDependency */,
+			);
+			name = "styke-appUITests";
+			productName = "styke-appUITests";
+			productReference = 047D910D2B96145D007911A9 /* styke-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		047D90EA2B961457007911A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					047D90F12B961457007911A9 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					047D91022B96145D007911A9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 047D90F12B961457007911A9;
+					};
+					047D910C2B96145D007911A9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 047D90F12B961457007911A9;
+					};
+				};
+			};
+			buildConfigurationList = 047D90ED2B961457007911A9 /* Build configuration list for PBXProject "styke-app" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 047D90E92B961457007911A9;
+			productRefGroup = 047D90F32B961457007911A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				047D90F12B961457007911A9 /* styke-app */,
+				047D91022B96145D007911A9 /* styke-appTests */,
+				047D910C2B96145D007911A9 /* styke-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		047D90F02B961457007911A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D90FE2B96145D007911A9 /* Preview Assets.xcassets in Resources */,
+				047D90FA2B96145D007911A9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D91012B96145D007911A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D910B2B96145D007911A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		047D90EE2B961457007911A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D90F82B961457007911A9 /* ContentView.swift in Sources */,
+				047D90F62B961457007911A9 /* styke_appApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D90FF2B96145D007911A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D91082B96145D007911A9 /* styke_appTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		047D91092B96145D007911A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047D91122B96145D007911A9 /* styke_appUITests.swift in Sources */,
+				047D91142B96145D007911A9 /* styke_appUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		047D91052B96145D007911A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047D90F12B961457007911A9 /* styke-app */;
+			targetProxy = 047D91042B96145D007911A9 /* PBXContainerItemProxy */;
+		};
+		047D910F2B96145D007911A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 047D90F12B961457007911A9 /* styke-app */;
+			targetProxy = 047D910E2B96145D007911A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		047D91152B96145D007911A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		047D91162B96145D007911A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		047D91182B96145D007911A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "styke-app/styke_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"styke-app/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		047D91192B96145D007911A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "styke-app/styke_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"styke-app/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		047D911B2B96145D007911A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/styke-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/styke-app";
+			};
+			name = Debug;
+		};
+		047D911C2B96145D007911A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/styke-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/styke-app";
+			};
+			name = Release;
+		};
+		047D911E2B96145D007911A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "styke-app";
+			};
+			name = Debug;
+		};
+		047D911F2B96145D007911A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.styke.styke-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "styke-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		047D90ED2B961457007911A9 /* Build configuration list for PBXProject "styke-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D91152B96145D007911A9 /* Debug */,
+				047D91162B96145D007911A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047D91172B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D91182B96145D007911A9 /* Debug */,
+				047D91192B96145D007911A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047D911A2B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D911B2B96145D007911A9 /* Debug */,
+				047D911C2B96145D007911A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047D911D2B96145D007911A9 /* Build configuration list for PBXNativeTarget "styke-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047D911E2B96145D007911A9 /* Debug */,
+				047D911F2B96145D007911A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 047D90EA2B961457007911A9 /* Project object */;
+}

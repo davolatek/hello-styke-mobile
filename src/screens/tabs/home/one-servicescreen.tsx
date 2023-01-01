@@ -10,11 +10,11 @@ import { ListEmptyComponent } from "../../../../components/Cards/list-empty.comp
 
 type OneServiceScreenProps = NativeStackScreenProps<
   HomeStackParamList,
-  "one_service"
+  'one_service'
 >;
 
 export const OneServiceScreen = ({ route }: OneServiceScreenProps) => {
-  const title = route.params.name || "Default Title"; // Provide a default value if name is undefined
+  const title = route.params.name || "Default Title"; 
 
   const filteredServices = () => {
     return PopularServices.filter(

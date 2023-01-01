@@ -31,6 +31,7 @@ import {
 } from "../../redux/store";
 import { signIn } from "../../redux/auth/thunkAction";
 import { AuthUser } from "../../redux/auth/types";
+import { DEVICE_HEIGHT } from "../../constants";
 
 export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
   const { colors } = useTheme();
@@ -116,7 +117,7 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
       flex={1}
       behavior={Platform.OS === "ios" ? "height" : "padding"}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} >
         <AuthLayout title={`Login to your \n Account`} goBack={true}>
           <View marginTop="55px">
             <Input

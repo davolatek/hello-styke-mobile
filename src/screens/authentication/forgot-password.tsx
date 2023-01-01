@@ -21,7 +21,8 @@ const details = [
     img: message,
   },
 ];
-type forgotpasswordprops = NativeStackScreenProps<AuthenticationStackParamsList>;
+type forgotpasswordprops =
+  NativeStackScreenProps<AuthenticationStackParamsList>;
 export const ForgotPassword = ({ navigation }: forgotpasswordprops) => {
   const { colors } = useTheme();
   const [active, setActive] = useState<number>(0);
@@ -72,7 +73,11 @@ export const ForgotPassword = ({ navigation }: forgotpasswordprops) => {
                   >
                     {elem.mode}
                   </Text>
-                  <Text fontFamily="Poppins-Medium" fontSize={13} color="black.100">
+                  <Text
+                    fontFamily="Poppins-Medium"
+                    fontSize={13}
+                    color="black.100"
+                  >
                     {elem.mode === "via SMS"
                       ? elem.code
                           .slice(0, 8)
@@ -89,10 +94,15 @@ export const ForgotPassword = ({ navigation }: forgotpasswordprops) => {
           ))}
           <View marginTop={-10} width="auto" paddingBottom={20}>
             {" "}
-            <Button title="Continue" onPress={() => navigation.navigate('otp_screen', {
-              number: '+2348064667542',
-              type: 'forgot password'
-            })} />
+            <Button
+              title="Continue"
+              onPress={() =>
+                navigation.navigate("otp_screen", {
+                  number: "+2348064667542",
+                  type: "forgot password",
+                })
+              }
+            />
           </View>
         </View>
       </ScrollView>

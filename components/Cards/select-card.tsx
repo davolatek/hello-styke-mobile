@@ -8,10 +8,19 @@ import RadioGroup, { RadioButtonProps } from "react-native-radio-buttons-group";
 type props = {
   image: ReactNode;
   title: string;
-  selected: boolean;
+  selected?: boolean;
   onSelect: () => void;
+  completed?: boolean;
+  show?: boolean
 };
-export const SelectCard = ({ image, title, selected, onSelect }: props) => {
+export const SelectCard = ({
+  image,
+  title,
+  selected,
+  completed,
+  show,
+  onSelect,
+}: props) => {
   const [selectedId, setSelectedId] = useState<string | undefined>();
   return (
     <TouchableOpacity onPress={() => onSelect()}>
@@ -22,25 +31,32 @@ export const SelectCard = ({ image, title, selected, onSelect }: props) => {
             {title}
           </Text>
         </View>
+    {
+      show &&     <View
+      width={7}
+      height={7}
+      borderWidth={2}
+      borderColor="blue.100"
+      borderRadius="full"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      {selected && (
         <View
-          width={7}
-          height={7}
-          borderWidth={2}
-          borderColor="blue.100"
+          width={5}
+          height={5}
+          bgColor="blue.100"
           borderRadius="full"
-          flexDirection="row"
-          justifyContent='center'
-          alignItems='center'
-        >
-          {selected && 
-            <View
-              width={5}
-              height={5}
-              bgColor="blue.100"
-              borderRadius="full"
-            ></View>
-          }
-        </View>
+        ></View>
+      )}
+    </View>
+    }
+        {completed && (
+          <Text color="blue.100" fontSize={10} fontFamily="Poppins-Medium">
+            Connected
+          </Text>
+        )}
       </HStack>
     </TouchableOpacity>
   );

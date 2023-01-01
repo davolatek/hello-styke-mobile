@@ -16,10 +16,12 @@ export const AuthLayout = ({ title, goBack, children }: props) => {
         <View
             bgColor='white.100'
             safeArea
-            height={DEVICE_HEIGHT}
+            minHeight={DEVICE_HEIGHT }
             paddingTop='7' 
             paddingLeft='5'
-            paddingRight='5'>
+            paddingRight='5'
+            paddingBottom={10}>
+            
             {
                 goBack ? <TouchableOpacity onPress={() => navigation.goBack()}>
                     <AntDesign name="arrowleft" size={24} color="black" />

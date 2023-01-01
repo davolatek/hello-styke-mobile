@@ -4,7 +4,7 @@ import {
 } from "@react-navigation/native-stack";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { AppRootStackParamsList } from "./app.roots.types";
-import { InboxScreen } from "../screens/tabs/inbox";
+import {InboxScreen } from "../screens/tabs/inbox";
 
 export type InboxStackParamList = {
   inbox_screen: undefined;
@@ -24,7 +24,7 @@ export const InboxStack = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="inbox_screen" component={InboxScreen} />
+      <Stack.Screen name="inbox_screen" component={InboxScreen as any} />
     </Stack.Navigator>
   );
 };

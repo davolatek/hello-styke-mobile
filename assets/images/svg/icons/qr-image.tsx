@@ -15,8 +15,7 @@ export const QrImage = () => (
     <path d="M316.858 1.93555V130M325.827 1.93555V130M242.115 1.93555V130M251.084 1.93555V130" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>    
     `}
-    width={380.83}
+    width={380.23}
     height={128.06}
-    style={{marginHorizontal: 'auto'}}
   />
 );

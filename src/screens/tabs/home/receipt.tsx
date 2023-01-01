@@ -13,7 +13,7 @@ import {
 import { Button } from "../../../../components/button";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { HomeStackParamList } from "../../../navigation/Home-navigation";
-import { DEVICE_HEIGHT } from "../../../constants";
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from "../../../constants";
 import { useState } from "react";
 import { MenuDropdown } from "../../../../components/modal/menu-dropdown";
 import {
@@ -32,7 +32,7 @@ export const Receipt = ({
         <View position="relative">
           <TouchableOpacity
             onPress={() => {
-              setOpenDropdown(prev => !prev);
+              setOpenDropdown((prev) => !prev);
             }}
           >
             <MenuIcon />
@@ -45,7 +45,9 @@ export const Receipt = ({
       {openDropdown && <MenuDropdown />}
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-        <QrImage />
+        <View marginLeft={0}>
+          <QrImage />
+        </View>
         <HStack
           paddingX={7}
           paddingY={5}
@@ -189,14 +191,12 @@ export const Receipt = ({
       >
         <Button
           style={{ width: "100%" }}
-          onPress={() =>
-            {
-              navigation.navigate("Home", {
-                screen: "home_screen"
-              })
-              console.log('hoop')
-            }
-          }
+          onPress={() => {
+            navigation.navigate("Home", {
+              screen: "home_screen",
+            });
+            console.log("hoop");
+          }}
           title="Go Home"
         ></Button>
       </View>
@@ -205,7 +205,8 @@ export const Receipt = ({
 };
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
     marginBottom: 20,
     height: DEVICE_HEIGHT - 280,
   },

@@ -49,7 +49,7 @@ export const ServiceCard = (props: props) => {
             borderRadius={15}
           />
         </View>
-        <View width={"57%"}>
+        <View width={"57%"} paddingLeft={3}>
           <View
             flexDirection="row"
             alignItems="center"

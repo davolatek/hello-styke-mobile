@@ -80,7 +80,7 @@ export const SignUp = ({ navigation }: SignUpScreenProps) => {
     },
   });
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <AuthLayout title={`Create your \n Account`} goBack={false}>
         <View marginTop="55px">
           <Input

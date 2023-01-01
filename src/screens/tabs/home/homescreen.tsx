@@ -63,7 +63,7 @@ export const HomeScreen = ({
           </View>
           <View flexDirection="row" paddingTop={33}>
             <View marginRight={5}>
-              <Notification />
+              <Notification width={17} height={20} />
             </View>
             <Bookmark />
           </View>

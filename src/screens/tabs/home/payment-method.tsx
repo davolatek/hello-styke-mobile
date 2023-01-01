@@ -25,6 +25,7 @@ export const PaymentMethod = ({ navigation }: paymentMthodScreenProps) => {
           contentContainerStyle={{ gap: 24 }}
           renderItem={({ item }) => (
             <SelectCard
+            show={true}
               selected={item.label === selected}
               onSelect={() => setSelected(item.label)}
               title={item.label}

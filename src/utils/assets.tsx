@@ -10,15 +10,20 @@ const cleaner = require("../../assets/images/png/cleaner.png");
 const drycleaner = require("../../assets/images/png/drycleaner.png");
 const painter = require("../../assets/images/png/painter.png");
 const driver = require("../../assets/images/png/driver.png");
-const arrowWhite = require("../../assets/images/svg/icons/arrow-white")
-const cleaner1 = require("../../assets/images/png/cleaner1.png")
-const cleaner2 = require("../../assets/images/png/Rectangle 99.png")
-const cleaner3 = require("../../assets/images/png/Rectangle 101.png")
-const cleaner4 = require("../../assets/images/png/Rectangle 102.png")
-const cleaner5 = require("../../assets/images/png/Rectangle 103.png")
-const cleaner6 = require("../../assets/images/png/Rectangle 76.png")
-const CardBg = require("../../assets/images/png/card-bg.png")
-const RCardBg = require("../../assets/images/png/r-card.png")
+const arrowWhite = require("../../assets/images/svg/icons/arrow-white");
+const cleaner1 = require("../../assets/images/png/cleaner1.png");
+const cleaner2 = require("../../assets/images/png/Rectangle 99.png");
+const cleaner3 = require("../../assets/images/png/Rectangle 101.png");
+const cleaner4 = require("../../assets/images/png/Rectangle 102.png");
+const cleaner5 = require("../../assets/images/png/Rectangle 103.png");
+const cleaner6 = require("../../assets/images/png/Rectangle 76.png");
+const CardBg = require("../../assets/images/png/card-bg.png");
+const RCardBg = require("../../assets/images/png/r-card.png");
+const rectangle = require("../../assets/images/png/rect.png");
+const calendar = require("../../assets/images/png/rafiki.png");
+const note = require("../../assets/images/png/cal.png");
+const roundCircle = require("../../assets/images/png/round-circle.png");
+const lady = require("../../assets/images/png/lady.png");
 
 export {
   comment,
@@ -41,5 +46,10 @@ export {
   cleaner5,
   cleaner6,
   CardBg,
-  RCardBg
+  RCardBg,
+  rectangle,
+  calendar,
+  note,
+  roundCircle,
+  lady
 };

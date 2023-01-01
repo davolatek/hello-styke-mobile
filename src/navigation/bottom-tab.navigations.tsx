@@ -33,7 +33,7 @@ const tabBarIconMap: Record<
   Home: ({ color, focused }) => {
     return <HomeIcon focused={focused} color={color} />;
   },
-  booking: ({ color, focused }) => (
+  bookings: ({ color, focused }) => (
     <BookingIcon color={color} focused={focused} />
   ),
   calendar: ({ color, focused }) => (
@@ -71,7 +71,7 @@ export const MyTabs = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen as any} />
-      <Tab.Screen name="booking" component={BookingStack} />
+      <Tab.Screen name="bookings" component={BookingStack} />
       <Tab.Screen name="calendar" component={CalendarScreen} />
       <Tab.Screen name="inbox" component={InboxStack} />
       <Tab.Screen name="profile" component={ProfileStack} />

@@ -21,7 +21,8 @@ export const Layout = ({ title, goBack, children }: layoutProps) => {
       safeArea
       bgColor={colors.white[100]}
       width="100%"
-      height={DEVICE_HEIGHT}
+      paddingBottom={10}
+      minHeight={DEVICE_HEIGHT}
     >
       <View flexDirection="row" marginTop={10} alignItems="center">
         {goBack ? (
