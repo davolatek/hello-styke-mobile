@@ -1,2 +1,1 @@
-export * from './profileScreen'
-export * from './confirm-email'
+export * from './profile-screen'

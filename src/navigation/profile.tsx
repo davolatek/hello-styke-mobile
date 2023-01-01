@@ -4,11 +4,10 @@ import {
 } from "@react-navigation/native-stack";
 import { CompositeScreenProps } from "@react-navigation/native";
 import { AppRootStackParamsList } from "./app.roots.types";
-import { ConfirmEmailScreen, ProfileScreen } from "../screens";
+import { ProfileScreen } from "../screens";
 
 export type ProfileStackParamList = {
   profile_screen: undefined;
-  confirm_email: undefined;
 };
 export type ProfileStackScreenProps<T extends keyof ProfileStackParamList> =
   CompositeScreenProps<
@@ -24,8 +23,7 @@ export const ProfileStack = () => {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="profile_screen" component={ProfileScreen as any} />
-      <Stack.Screen name="confirm_email" component={ConfirmEmailScreen} />
+      <Stack.Screen name="profile_screen" component={ProfileScreen} />
     </Stack.Navigator>
   );
 };

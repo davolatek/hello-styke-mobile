@@ -95,4 +95,24 @@ export const completeprofile = createAsyncThunk(
     }
   }
 );
+export const verifyOtp = createAsyncThunk(
+  "auth/verifyOtp",
+  async (otp: string, thunkAPI) => {
+    try {
+      const response = await useAxios({
+        url: `${BASE_URL}/authentication/verify-otp/${otp}`,
+        method: "get",
+      });
+
+      return response.data
+    } catch (error: any) {
+      if (axios.isAxiosError(error) && error.response) {
+        const msg = error?.response || "An error occured, please try again";
+        return thunkAPI.rejectWithValue(msg);
+      } else {
+        return thunkAPI.rejectWithValue(error?.response as any);
+      }
+    }
+  }
+);
 

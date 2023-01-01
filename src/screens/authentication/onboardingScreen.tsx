@@ -14,7 +14,6 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { Button } from "../../../components/button";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import { AuthenticationStackParamsList } from "../../navigation/onboarding";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useAppThunkDispatch, useAppSelector } from "../../redux/store";

@@ -4,9 +4,13 @@ const cleaning = require("../../assets/images/png/bucket.png");
 const support = require("../../assets/images/png/support.png");
 const concierge = require("../../assets/images/png/concierge.png");
 const shopping = require("../../assets/images/png/shopping.png");
-const electrician = require("../../assets/images/png/electrician.png");
 const transport = require("../../assets/images/png/transport.png");
 const box = require("../../assets/images/png/box.png");
+const cleaner = require("../../assets/images/png/cleaner.png");
+const drycleaner = require("../../assets/images/png/drycleaner.png");
+const painter = require("../../assets/images/png/painter.png");
+const driver = require("../../assets/images/png/driver.png");
+const arrowWhite = require("../../assets/images/svg/icons/arrow-white")
 
 export {
   comment,
@@ -16,6 +20,10 @@ export {
   shopping,
   concierge,
   transport,
-  electrician,
-  box
+  box,
+  cleaner,
+  driver,
+  drycleaner,
+  painter,
+  arrowWhite
 };

@@ -1,9 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Text, View } from "../../../../components/customs";
-import { ProfileStackParamList } from "../../../navigation/profile";
-import { Layout } from "../../../../components/layout.tsx";
+import { Text, View } from "../../../components/customs";
+import { AuthenticationStackParamsList } from "../../navigation/onboarding";
+import { Layout } from "../../../components/layout.tsx";
 
-type ConfirmEmailScreenProps = NativeStackScreenProps<ProfileStackParamList>;
+type ConfirmEmailScreenProps = NativeStackScreenProps<AuthenticationStackParamsList>;
 export const ConfirmEmailScreen = ({ navigation }: ConfirmEmailScreenProps) => {
   return (
     <Layout title="Confirm Email" goBack={true}>
@@ -20,6 +20,7 @@ export const ConfirmEmailScreen = ({ navigation }: ConfirmEmailScreenProps) => {
           Enter verification code sent to your email
         </Text>
       </View>
+      
     </Layout>
   );
 };

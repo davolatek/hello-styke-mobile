@@ -6,6 +6,6 @@ export const ProfilevalidationSchema = Yup.object().shape({
     lastName: Yup.string().required("Last Name is required"),
     dob: Yup.string().required("Date of Birth is required"),
     email: Yup.string().required("Email is required"),
-    phone: Yup.string().required("Phone number is required"),
+    phoneNumber: Yup.string().required("Phone number is required"),
     address: Yup.string().required("Address is required"),
   });

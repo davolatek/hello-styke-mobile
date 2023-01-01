@@ -22,4 +22,6 @@ export * from './concierge'
 export * from './repair'
 export * from './shopping'
 export * from './truck'
+export * from './medal'
+export * from './bookmarked'
 

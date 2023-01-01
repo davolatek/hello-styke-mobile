@@ -8,17 +8,50 @@ import { KeyboardAvoidingView, Pressable, StyleSheet } from "react-native";
 import { Button } from "../../../components/button";
 import { DEVICE_HEIGHT } from "../../constants";
 import { SuccessModal } from "../../../components/modal/success-modal";
+import { AppStackScreenProps } from "../../navigation/app.roots.types";
+import { useRoute } from "@react-navigation/native";
+import { useAppThunkDispatch } from "../../redux/store";
+import { useToast } from "native-base";
+import { verifyOtp } from "../../redux/auth/thunkAction";
 
-type otpScreenProps = NativeStackScreenProps<
+type OtpScreenProps = NativeStackScreenProps<
   AuthenticationStackParamsList,
   "otp_screen"
 >;
-export const OtpScreen = ({ navigation, route }: otpScreenProps) => {
-  console.log(route);
+export const OtpScreen = ({
+  navigation,
+}: AppStackScreenProps<"onboarding">) => {
+  const route = useRoute<any>();
   const ref = useRef();
   const [code, setCode] = useState("");
   const [countdown, setCountdown] = useState<number>(60);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const dispatch = useAppThunkDispatch();
+  const toast = useToast();
+
+  const handleVerifyOtp = async () => {
+    try {
+      await dispatch(verifyOtp(code)).then((res) => {
+        if (res.meta.requestStatus === "fulfilled") {
+          toast.show({
+            description: "Profile completed successfully",
+            placement: "top",
+            variant: "solid",
+          });
+          setShowModal(true)
+        } else {
+          console.log(res?.payload?.data?.response);
+          toast.show({
+            description: res?.payload?.data?.response || "An error occured",
+            placement: "top",
+            variant: "solid",
+          });
+        }
+      });
+    } catch (error) {
+      console.error("OTP Verification failed", error);
+    }
+  };
 
   const memoized_time = useMemo(() => {
     return (
@@ -103,16 +136,25 @@ export const OtpScreen = ({ navigation, route }: otpScreenProps) => {
               }
               onPress={() =>
                 route.params.type === "forgot password"
-                  ? navigation.navigate("create_new_password")
-                  : setShowModal(true)
+                  ? navigation.navigate("onboarding", {
+                      screen: "create_new_password",
+                    })
+                  : handleVerifyOtp()
               }
             />
           </View>
         </View>
         {
           <SuccessModal
-            onPress={() => navigation.navigate("login")}
-            buttonTitle="Go Home"
+            onPress={() =>
+              {
+                navigation.navigate('onboarding', {
+                  screen: 'login'
+                })
+                setShowModal(false)
+              }
+            }
+            buttonTitle="Login"
             title="Verified"
             text="Email verification was successful"
             visible={showModal}

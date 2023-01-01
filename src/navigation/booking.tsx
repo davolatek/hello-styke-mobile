@@ -7,7 +7,7 @@ import { AppRootStackParamsList } from "./app.roots.types";
 import { BookingScreen } from "../screens/tabs/bookings";
 
 export type BookingStackParamList = {
-    booking: undefined
+  booking: undefined;
 };
 export type BookingStackScreenProps<T extends keyof BookingStackParamList> =
   CompositeScreenProps<

@@ -17,6 +17,7 @@ import { useTheme } from "native-base";
 import { BookingStack } from "./booking";
 import { CalendarScreen, HomeScreen } from "../screens";
 import { InboxStack } from "./inbox";
+import { HomeStack } from "./Home-navigation";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -69,7 +70,7 @@ export const MyTabs = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="booking" component={BookingStack} />
       <Tab.Screen name="calendar" component={CalendarScreen} />
       <Tab.Screen name="inbox" component={InboxStack} />

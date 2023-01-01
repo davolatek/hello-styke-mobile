@@ -9,6 +9,8 @@ import {
   OtpScreen,
   CreateNewPassword,
   Login,
+  CompleteProfileScreen,
+  ConfirmEmailScreen
 } from "../screens";
 
 import { CompositeScreenProps } from "@react-navigation/native";
@@ -27,6 +29,8 @@ export type AuthenticationStackParamsList = {
     type: "forgot password" | "confirm email";
   };
   create_new_password: undefined;
+  complete_profile: undefined;
+  confirm_email: undefined
 };
 
 export type AuthenticationStackScreenProps<
@@ -48,8 +52,10 @@ export const AuthenticationStack = () => {
       <Stack.Screen name="login" component={Login as any} />
       <Stack.Screen name="sign_up" component={SignUp} />
       <Stack.Screen name="forgot_password" component={ForgotPassword} />
-      <Stack.Screen name="otp_screen" component={OtpScreen} />
+      <Stack.Screen name="otp_screen" component={(OtpScreen as any)} />
       <Stack.Screen name="create_new_password" component={CreateNewPassword} />
+      <Stack.Screen name="complete_profile" component={CompleteProfileScreen} />
+      <Stack.Screen name="confirm_email" component={ConfirmEmailScreen} />
     </Stack.Navigator>
   );
 };

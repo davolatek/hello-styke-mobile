@@ -13,9 +13,14 @@ import { box } from "../../../utils/assets";
 import { BottomHomeTab } from "../../../../components/bottom-tab";
 import { useState } from "react";
 import { useAppSelector } from "../../../redux/store";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { HomeStackParamList } from "../../../navigation/Home-navigation";
 
-export const HomeScreen = () => {
-  const {user} = useAppSelector(({userReducer}) => userReducer)
+type HomeScreenProps = NativeStackScreenProps<HomeStackParamList>;
+export const HomeScreen = ({ navigation }: HomeScreenProps) => {
+  const { user } = useAppSelector(({ userReducer }) => userReducer);
+  console.log(user, "userss");
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View
@@ -50,7 +55,7 @@ export const HomeScreen = () => {
                 fontFamily="Poppins-SemiBold"
                 fontSize={15}
               >
-              {user?.firstName} {user?.lastName}
+                {user?.firstName} {user?.lastName}
               </Text>
             </View>
           </View>
@@ -97,7 +102,9 @@ export const HomeScreen = () => {
             <Text fontFamily="Poppins-Medium" color="black.100" fontSize={16}>
               Services
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("all_services")}
+            >
               <Text color="blue.100" fontFamily="Poppins-Regular" fontSize={12}>
                 See More
               </Text>
@@ -113,9 +120,7 @@ export const HomeScreen = () => {
           >
             {Services.map((elem) => (
               <TouchableOpacity key={elem.id} style={styles.card}>
-              <View>
-                {elem.image}
-              </View>
+                <View>{elem.image}</View>
                 <Text
                   height={44}
                   fontFamily="Poppins-Regular"

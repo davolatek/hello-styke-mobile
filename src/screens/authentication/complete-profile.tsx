@@ -1,26 +1,25 @@
-import { View } from "../../../../components/customs";
-import { Layout } from "../../../../components/layout.tsx";
-import { Nigeria, Pencil, Person } from "../../../../assets/images/svg/icons";
-import { Input } from "../../../../components/input";
+import { View } from "../../../components/customs";
+import { Layout } from "../../../components/layout.tsx";
+import { Nigeria, Pencil, Person } from "../../../assets/images/svg/icons";
+import { Input } from "../../../components/input";
 import { KeyboardAvoidingView, ScrollView } from "native-base";
-import { Button } from "../../../../components/button";
-import { AppStackScreenProps } from "../../../navigation/app.roots.types";
-import { PickImage } from "../../../../components/customs/pick-image";
+import { Button } from "../../../components/button";
+import { AppStackScreenProps } from "../../navigation/app.roots.types";
+import { AuthenticationStackParamsList } from "../../navigation/onboarding";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { PickImage } from "../../../components/customs/pick-image";
 import { useFormik } from "formik";
 import { Image, Platform } from "react-native";
-import { ProfilevalidationSchema } from "../../../utils/schema/profile-validation";
-import { useAppThunkDispatch, useAppSelector } from "../../../redux/store";
-import {
-  uploadPicture,
-  completeprofile,
-} from "../../../redux/auth/thunkAction";
+import { ProfilevalidationSchema } from "../../utils/schema/profile-validation";
+import { useAppThunkDispatch, useAppSelector } from "../../redux/store";
+import { uploadPicture, completeprofile } from "../../redux/auth/thunkAction";
 import { useToast } from "native-base";
 import { useEffect } from "react";
-import { setUser } from "../../../redux/user";
+import { setUser } from "../../redux/user";
 
-export const ProfileScreen = ({
-  navigation,
-}: AppStackScreenProps<"onboarding">) => {
+type CompleteProfileScreenProps =
+  NativeStackScreenProps<AuthenticationStackParamsList>;
+export const CompleteProfileScreen = ({ navigation }: CompleteProfileScreenProps) => {
   const toast = useToast();
   const dispatch = useAppThunkDispatch();
   const { loading } = useAppSelector(({ authReducer }) => authReducer);
@@ -41,7 +40,7 @@ export const ProfileScreen = ({
       lastName: "",
       dob: "",
       email: "",
-      phone: "",
+      phoneNumber: "",
       address: "",
     },
     validationSchema: ProfilevalidationSchema,
@@ -51,7 +50,7 @@ export const ProfileScreen = ({
         userId: user.id,
         firstName: values.firstName,
         lastName: values.lastName,
-        phone: values.phone,
+        phoneNumber: values.phoneNumber,
       };
       const formData = new FormData();
       formData.append("mimeType", "image/*");
@@ -68,12 +67,9 @@ export const ProfileScreen = ({
             variant: "solid",
             placement: "top",
           });
-          navigation.navigate("onboarding", {
-            screen: "otp_screen",
-            params: {
-              email: values.email,
-              type: "confirm email",
-            },
+          navigation.navigate("otp_screen", {
+            email: values.email,
+            type: "confirm email",
           });
         } else {
           console.log(res?.payload?.data);
@@ -183,13 +179,13 @@ export const ProfileScreen = ({
                     <Nigeria />
                   </View>
                 }
-                onChangeText={handleChange("phone")}
-                onBlur={handleBlur("phone")}
-                err={!!errors.phone && touched.phone}
-                errMsg={errors.phone}
+                onChangeText={handleChange("phoneNumber")}
+                onBlur={handleBlur("phoneNumber")}
+                err={!!errors.phoneNumber && touched.phoneNumber}
+                errMsg={errors.phoneNumber}
                 keyboardType="number-pad"
                 placeholder="Phone Number"
-                value={values.phone}
+                value={values.phoneNumber}
               />
               <Input
                 placeholder="Address"

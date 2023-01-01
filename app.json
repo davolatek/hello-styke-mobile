@@ -25,6 +25,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "488b1a03-faff-40ab-b514-a7802d207ccf"
+      }
+    },
+    "owner": "stykeapp",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/488b1a03-faff-40ab-b514-a7802d207ccf"
     }
   }
 }

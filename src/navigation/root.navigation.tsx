@@ -7,21 +7,21 @@ import { useLayoutEffect, useState } from "react";
 import * as SplasScreen from 'expo-splash-screen'
 
 
-SplasScreen.preventAutoHideAsync();
+// SplasScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator<AppRootStackParamsList>();
 export const RootNavigator = () => {
   const [isLoggedIn, SetIsLoggedIn] = useState(false);
-  useLayoutEffect(() => {
-    (async () => {
-      const looge = await getItem("isLoggedIn");
-    //   await saveItem('isLoggedIn', '')
-      setTimeout(async() => {
-        await SplasScreen.hideAsync()
-      }, 1000);
-      SetIsLoggedIn(looge as any);
-    })();
-  }, []);
+//   useLayoutEffect(() => {
+//     (async () => {
+//       const looge = await getItem("isLoggedIn");
+//     //   await saveItem('isLoggedIn', '')
+//       setTimeout(async() => {
+//         await SplasScreen.hideAsync()
+//       }, 1000);
+//       SetIsLoggedIn(looge as any);
+//     })();
+//   }, []);
 
   return (
     <Stack.Navigator
@@ -29,9 +29,9 @@ export const RootNavigator = () => {
         headerShown: false,
       }}
     >
-      {!Boolean(isLoggedIn) && (
+      {/* {!Boolean(isLoggedIn) && ( */}
         <Stack.Screen name="onboarding" component={AuthenticationStack} />
-      )}
+      {/* )} */}
       <Stack.Screen name="tabs" component={MyTabs} />
     </Stack.Navigator>
   );
