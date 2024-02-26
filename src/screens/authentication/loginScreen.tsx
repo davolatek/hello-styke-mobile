@@ -276,6 +276,9 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
                 navigation.navigate("onboarding", {
                   screen: "sign_up",
                 })
+                // navigation.navigate("home_stack", {
+                //   screen: "location"
+                // })
               }
             >
               <Text

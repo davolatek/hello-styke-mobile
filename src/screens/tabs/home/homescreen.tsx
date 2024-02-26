@@ -15,9 +15,11 @@ import { useState } from "react";
 import { useAppSelector } from "../../../redux/store";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { HomeStackParamList } from "../../../navigation/Home-navigation";
+import { AppStackNavigationProp } from "../../../navigation/app.roots.types";
 
-type HomeScreenProps = NativeStackScreenProps<HomeStackParamList>;
-export const HomeScreen = ({ navigation }: HomeScreenProps) => {
+export const HomeScreen = ({
+  navigation,
+}: AppStackNavigationProp<"home_stack">) => {
   const { user } = useAppSelector(({ userReducer }) => userReducer);
   console.log(user, "userss");
 
@@ -103,7 +105,11 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
               Services
             </Text>
             <TouchableOpacity
-              onPress={() => navigation.navigate("all_services")}
+              onPress={() =>
+                navigation.navigate("home_stack", {
+                  screen: "all_services",
+                })
+              }
             >
               <Text color="blue.100" fontFamily="Poppins-Regular" fontSize={12}>
                 See More
@@ -119,7 +125,19 @@ export const HomeScreen = ({ navigation }: HomeScreenProps) => {
             style={styles.container}
           >
             {Services.map((elem) => (
-              <TouchableOpacity key={elem.id} style={styles.card}>
+              <TouchableOpacity
+                key={elem.id}
+                style={styles.card}
+                onPress={() =>
+                  navigation.navigate('home_stack', {
+                    screen: "one_service",
+                    params: {
+                      name: elem.name
+                    }
+                  })
+                  
+                }
+              >
                 <View>{elem.image}</View>
                 <Text
                   height={44}

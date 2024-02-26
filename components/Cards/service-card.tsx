@@ -24,9 +24,15 @@ export const ServiceCard = (props: props) => {
   const elem = props;
   const navigation = useNavigation<any>()
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("about_one_service", {
-      id: elem.id
-    })}>
+    <TouchableOpacity onPress={() => 
+      navigation.navigate('home_stack', {
+        screen: 'about_one_service',
+        params: {
+          id: elem.id,
+          name: elem.name
+        }
+      })
+    }>
       <View
         width="100%"
         bg="white.100"

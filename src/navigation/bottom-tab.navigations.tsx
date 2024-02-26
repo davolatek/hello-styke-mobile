@@ -70,7 +70,7 @@ export const MyTabs = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Home" component={HomeScreen as any} />
       <Tab.Screen name="booking" component={BookingStack} />
       <Tab.Screen name="calendar" component={CalendarScreen} />
       <Tab.Screen name="inbox" component={InboxStack} />

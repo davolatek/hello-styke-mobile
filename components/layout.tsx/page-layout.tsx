@@ -11,22 +11,31 @@ type layoutProps = {
   goBack?: true;
   icon?: ReactNode;
   children: ReactNode;
+  withPadding?: boolean;
+  color?: string;
 };
-export const PageLayout = ({ title, goBack, children, icon }: layoutProps) => {
+export const PageLayout = ({
+  title,
+  goBack,
+  children,
+  icon,
+  withPadding = true,
+  color = 'white.100'
+}: layoutProps) => {
   const { colors } = useTheme();
   const navigation = useNavigation();
   return (
     <View
-      paddingLeft={5}
-      paddingRight={5}
+      paddingX={withPadding ? 0 : 5}
       safeArea
-      bgColor={colors.white[100]}
+      bgColor={color}
       width="100%"
       height={DEVICE_HEIGHT}
     >
       <View
         flexDirection="row"
         marginTop={10}
+        paddingX={withPadding ? 5 : 0}
         alignItems="center"
         justifyContent="space-between"
       >

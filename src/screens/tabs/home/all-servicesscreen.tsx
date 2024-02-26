@@ -8,7 +8,7 @@ import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import { ReactNode, useState } from "react";
 import { Service } from "../../../../components/Cards/service";
 
-type AllServicesScreenProps = NativeStackScreenProps<HomeStackParamList>;
+type AllServicesScreenProps = NativeStackScreenProps<HomeStackParamList, 'all_services'>;
 export const AllServicesScreen = ({ navigation }: AllServicesScreenProps) => {
   const [columns, setColumns] = useState(3);
 

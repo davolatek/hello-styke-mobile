@@ -20,3 +20,4 @@ export const TabList = [
     id: 5,
   },
 ];
+

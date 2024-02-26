@@ -5,6 +5,7 @@ import { AppRootStackParamsList } from "./app.roots.types";
 import { getItem, saveItem } from "../../local-storage";
 import { useLayoutEffect, useState } from "react";
 import * as SplasScreen from 'expo-splash-screen'
+import { HomeStack } from "./Home-navigation";
 
 
 // SplasScreen.preventAutoHideAsync();
@@ -33,6 +34,7 @@ export const RootNavigator = () => {
         <Stack.Screen name="onboarding" component={AuthenticationStack} />
       {/* )} */}
       <Stack.Screen name="tabs" component={MyTabs} />
+      <Stack.Screen name="home_stack" component={HomeStack} />
     </Stack.Navigator>
   );
 };

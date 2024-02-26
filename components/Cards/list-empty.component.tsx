@@ -9,11 +9,12 @@ export const ListEmptyComponent = ({ name }: props) => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      height="100%"
+     
       contentContainerStyle={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        alignSelf:'center'
       }}
     >
       <Text fontFamily="Poppins-Light" textAlign="center"fontSize={15} marginTop="50%">

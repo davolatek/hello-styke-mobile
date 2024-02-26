@@ -6,15 +6,17 @@ interface button extends Partial<TouchableOpacityProps> {
   title: string;
   onPress: () => void;
   loading?: "idle" | "pending" | "successful" | "failed";
+  color?: string
+  textColor?: string
 }
-export const Button = ({ title, onPress, loading, ...otherProps }: button) => {
+export const Button = ({ title, textColor='white.100', onPress, loading, color='blue.100', ...otherProps }: button) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress} {...otherProps}>
-      <View bgColor="blue.100" style={styles.btn}>
+      <View bgColor={color} style={styles.btn}>
         {loading === "pending" ? (
           <ActivityIndicator />
         ) : (
-          <Text fontFamily="Poppins-Medium" fontSize="16" color="white.100">
+          <Text fontFamily="Poppins-Medium" fontSize="16" color={textColor}>
             {title}
           </Text>
         )}
