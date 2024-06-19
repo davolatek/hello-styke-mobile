@@ -18,6 +18,7 @@ export const lightThemeColors = {
   pink: {
     100: "rgba(64, 123, 255, 0.10)",
     200: "#ECF2FF",
+    300: '#ECECEC'
   },
   grey: {
     100: "rgba(0, 0, 0, 0.30)",
@@ -26,6 +27,7 @@ export const lightThemeColors = {
     400: "rgba(0, 0, 0, 0.5)",
     500: "rgba(0, 0, 0, 0.8)",
     600: "rgba(0, 0, 0, 0.20)",
+    700: '#BBC2D3'
   },
   red: {
     100: "#F44336",

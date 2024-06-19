@@ -12,6 +12,7 @@ import {
   Chat,
   EditProfileScreen,
   HomeScreen,
+  HomeWelcomeScreen,
   Invite,
   Location,
   Notifications,
@@ -23,6 +24,14 @@ import {
 } from "../screens";
 import BookingDetails from "../screens/tabs/home/booking-details";
 import { Receipt } from "../screens/tabs/home/receipt";
+import {
+  EnterLocationScreen,
+  Forms,
+  JobForm,
+  LocationPage,
+  TaskerScreen,
+} from "../screens/Styker";
+import { ImageSourcePropType } from "react-native";
 
 export type HomeStackParamList = {
   home_screen: undefined;
@@ -46,7 +55,16 @@ export type HomeStackParamList = {
   payment_options: undefined;
   security: undefined;
   invite: undefined;
-  help_center: undefined
+  help_center: undefined;
+  home_welcome_screen: undefined;
+  tasker_screen: undefined;
+  forms: undefined;
+  job_form: {
+    name: string;
+    image: ImageSourcePropType;
+  };
+  location_page: undefined;
+  enter_location: undefined;
 };
 
 export type HomeStackScreenProps<T extends keyof HomeStackParamList> =
@@ -78,6 +96,18 @@ export const HomeStack = () => {
       <Stack.Screen name="notification" component={Notifications} />
       <Stack.Screen name="security" component={Security} />
       <Stack.Screen name="invite" component={Invite} />
+      <Stack.Screen
+        name="home_welcome_screen"
+        component={HomeWelcomeScreen as any}
+      />
+      <Stack.Screen name="tasker_screen" component={TaskerScreen as any} />
+      <Stack.Screen name="forms" component={Forms as any} />
+      <Stack.Screen name="job_form" component={JobForm as any} />
+      <Stack.Screen name="location_page" component={LocationPage as any} />
+      <Stack.Screen
+        name="enter_location"
+        component={EnterLocationScreen}
+      />
     </Stack.Navigator>
   );
 };

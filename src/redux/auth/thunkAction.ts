@@ -37,11 +37,13 @@ export const signIn = createAsyncThunk(
         data: data,
       });
 
-      return response.data
+      return response.data;
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
-        console.log(error?.response?.data?.message, 'from bggg')
-        const msg = error?.response?.data?.message || "An error occured, please try again";
+        console.log(error?.response?.data?.message, "from bggg");
+        const msg =
+          error?.response?.data?.message ||
+          "An error occured, please try again";
         return thunkAPI.rejectWithValue(msg);
       } else {
         return thunkAPI.rejectWithValue(error?.response?.data?.message as any);
@@ -58,12 +60,12 @@ export const uploadPicture = createAsyncThunk(
         url: `${BASE_URL}/account-management/upload-profile`,
         method: "post",
         data: data,
-        headers:  {
-          "Content-Type": "multipart/form-data"
-        }
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
 
-      return response.data
+      return response.data;
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
         const msg = error?.response || "An error occured, please try again";
@@ -84,7 +86,7 @@ export const completeprofile = createAsyncThunk(
         data: data,
       });
 
-      return response.data
+      return response.data;
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
         const msg = error?.response || "An error occured, please try again";
@@ -104,7 +106,7 @@ export const verifyOtp = createAsyncThunk(
         method: "get",
       });
 
-      return response.data
+      return response.data;
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
         const msg = error?.response || "An error occured, please try again";
@@ -115,4 +117,23 @@ export const verifyOtp = createAsyncThunk(
     }
   }
 );
+export const requestOtp = createAsyncThunk(
+  "auth/requestOtp",
+  async (email: string, thunkAPI) => {
+    try {
+      const response = await useAxios({
+        url: `${BASE_URL}/authentication/generate-otp/${email}`,
+        method: "get",
+      });
 
+      return response.data;
+    } catch (error: any) {
+      if (axios.isAxiosError(error) && error.response) {
+        const msg = error?.response || "An error occured, please try again";
+        return thunkAPI.rejectWithValue(msg);
+      } else {
+        return thunkAPI.rejectWithValue(error?.response as any);
+      }
+    }
+  }
+);

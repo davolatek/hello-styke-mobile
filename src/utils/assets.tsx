@@ -24,6 +24,18 @@ const calendar = require("../../assets/images/png/rafiki.png");
 const note = require("../../assets/images/png/cal.png");
 const roundCircle = require("../../assets/images/png/round-circle.png");
 const lady = require("../../assets/images/png/lady.png");
+const bg = require("../../assets/images/png/84.png");
+const styker = require("../../assets/images/png/styker.png");
+const travel = require("../../assets/images/png/travelbudy.png");
+const distress = require("../../assets/images/png/distress.png");
+const iPhone = require("../../assets/images/png/iphone.png");
+const bg2 = require("../../assets/images/png/bg.png");
+const clean = require("../../assets/images/png/clean.png");
+const repair = require("../../assets/images/png/repair.png");
+const admin = require("../../assets/images/png/admin.png");
+const trolley = require("../../assets/images/png/trolley.png");
+const container = require("../../assets/images/png/container.png");
+const desk = require("../../assets/images/png/desk.png");
 
 export {
   comment,
@@ -51,5 +63,17 @@ export {
   calendar,
   note,
   roundCircle,
-  lady
+  lady,
+  bg,
+  distress,
+  styker,
+  travel,
+  iPhone,
+  bg2,
+  desk,
+  clean,
+  repair,
+  trolley,
+  container,
+  admin
 };

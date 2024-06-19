@@ -19,7 +19,7 @@ type FontFamily =
   | "Poppins-Light"
   | "Poppins-Medium"
   | "Poppins-Regular"
-  | "Poppins-SemiBold"
+  | "Poppins-SemiBold";
 
 export type TypographyProps = {
   variant?: Variant;
@@ -79,16 +79,16 @@ export const Text = ({
   paddingTop,
   ...props
 }: TypographyProps) => {
-  let textFontSize: { fontSize: number, lineHeight: number } = {
+  let textFontSize: { fontSize: number; lineHeight: number } = {
     fontSize: 0,
-    lineHeight: 0
+    lineHeight: 0,
   };
   if (
     typeof props.fontSize === "number" ||
     typeof props.fontSize === "string"
   ) {
     textFontSize.fontSize = RFValue(Number(props.fontSize) - 2);
-    textFontSize.lineHeight = RFValue(Number(props.fontSize) - 2) + 3
+    textFontSize.lineHeight = RFValue(Number(props.fontSize) - 2) + 3;
   }
   return (
     <Typography
@@ -99,7 +99,10 @@ export const Text = ({
       paddingTop={paddingTop ?? 2}
       style={[
         props.style,
-        Boolean(textFontSize.fontSize) && { fontSize: textFontSize.fontSize, lineHeight: textFontSize.lineHeight },
+        Boolean(textFontSize.fontSize) && {
+          fontSize: textFontSize.fontSize,
+          lineHeight: textFontSize.lineHeight,
+        },
       ]}
       // _dark={{ color: 'rgba(255, 255, 255, 0.7)' }}
       // _light={{ color: '#000' }}

@@ -10,9 +10,9 @@ import { DEVICE_HEIGHT } from "../../constants";
 import { SuccessModal } from "../../../components/modal/success-modal";
 import { AppStackScreenProps } from "../../navigation/app.roots.types";
 import { useRoute } from "@react-navigation/native";
-import { useAppThunkDispatch } from "../../redux/store";
+import { useAppSelector, useAppThunkDispatch } from "../../redux/store";
 import { useToast } from "native-base";
-import { verifyOtp } from "../../redux/auth/thunkAction";
+import { requestOtp, verifyOtp } from "../../redux/auth/thunkAction";
 
 type OtpScreenProps = NativeStackScreenProps<
   AuthenticationStackParamsList,
@@ -28,6 +28,7 @@ export const OtpScreen = ({
   const [showModal, setShowModal] = useState<boolean>(false);
   const dispatch = useAppThunkDispatch();
   const toast = useToast();
+  const { user } = useAppSelector(({ userReducer }) => userReducer);
 
   const handleVerifyOtp = async () => {
     try {
@@ -38,7 +39,7 @@ export const OtpScreen = ({
             placement: "top",
             variant: "solid",
           });
-          setShowModal(true)
+          setShowModal(true);
         } else {
           console.log(res?.payload?.data?.response);
           toast.show({
@@ -52,11 +53,33 @@ export const OtpScreen = ({
       console.error("OTP Verification failed", error);
     }
   };
-
+  const handleRequestOtp = async () => {
+    try {
+      await dispatch(requestOtp(user?.email)).then((res) => {
+        if (res.meta.requestStatus === "fulfilled") {
+          toast.show({
+            description: "OTP sent successfully",
+            placement: "top",
+            variant: "solid",
+          });
+          setCountdown(60);
+        } else {
+          console.log(res?.payload?.data?.response);
+          toast.show({
+            description: res?.payload?.data?.response || "An error occurred",
+            placement: "top",
+            variant: "solid",
+          });
+        }
+      });
+    } catch (error) {
+      console.error("Request OTP failed", error);
+    }
+  };
   const memoized_time = useMemo(() => {
     return (
       <Pressable
-        onPress={() => setCountdown(60)}
+        onPress={handleRequestOtp}
         disabled={countdown !== 0}
         style={{ opacity: countdown !== 0 ? 0.5 : 1 }}
       >
@@ -97,6 +120,7 @@ export const OtpScreen = ({
               color="black.100"
               fontSize={16}
               alignItems="center"
+              textAlign="center"
             >
               {route.params.type === "forgot password"
                 ? route.params.number
@@ -146,14 +170,12 @@ export const OtpScreen = ({
         </View>
         {
           <SuccessModal
-            onPress={() =>
-              {
-                navigation.navigate('onboarding', {
-                  screen: 'login'
-                })
-                setShowModal(false)
-              }
-            }
+            onPress={() => {
+              navigation.navigate("onboarding", {
+                screen: "login",
+              });
+              setShowModal(false);
+            }}
             buttonTitle="Login"
             title="Verified"
             text="Email verification was successful"

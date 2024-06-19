@@ -7,7 +7,18 @@ import {
   Truck,
 } from "../assets/images/svg/icons";
 
-import { painter, cleaner, drycleaner, driver } from "../src/utils/assets";
+import {
+  painter,
+  cleaner,
+  drycleaner,
+  driver,
+  clean,
+  admin,
+  trolley,
+  repair,
+  container,
+  desk,
+} from "../src/utils/assets";
 export const Services = [
   {
     image: <Cleaning />,
@@ -244,5 +255,129 @@ export const ChatMessages = [
     message: "Trust me, you did a great ...",
     type: "Missed",
     date: "Nov 12, 2023",
+  },
+];
+export const OneService = [
+  {
+    id: 1,
+    type: "cleaning",
+    name: "House Cleaning Service",
+  },
+  {
+    id: 2,
+    type: "cleaning",
+    name: "Disinfecting Service",
+  },
+  {
+    id: 3,
+    type: "cleaning",
+    name: "Move-in Cleaning",
+  },
+  {
+    id: 4,
+    type: "cleaning",
+    name: "Move-out Cleaning",
+  },
+  {
+    id: 5,
+    type: "cleaning",
+    name: "Carpet Cleaning Service",
+  },
+  {
+    id: 6,
+    type: "cleaning",
+    name: "Car Washing",
+  },
+  {
+    id: 7,
+    type: "cleaning",
+    name: "Laundry Service",
+  },
+  {
+    id: 8,
+    type: "repair & installation",
+    name: "TV Mounting",
+  },
+  {
+    id: 9,
+    type: "repair & installation",
+    name: "CCTV Installation",
+  },
+  {
+    id: 10,
+    type: "repair & installation",
+    name: "AC Repair & Installation",
+  },
+  {
+    id: 11,
+    type: "repair & installation",
+    name: "Cables & Dish Installation",
+  },
+  {
+    id: 12,
+    type: "administrative support",
+    name: "Office Cleaning",
+  },
+  {
+    id: 13,
+    type: "administrative support",
+    name: "Office Administrator",
+  },
+  {
+    id: 14,
+    type: "administrative support",
+    name: "Technical Setup Service",
+  },
+  {
+    id: 15,
+    type: "concierge",
+    name: "personal assistant",
+  },
+  {
+    id: 16,
+    type: "concierge",
+    name: "Virtual Assistant",
+  },
+  {
+    id: 17,
+    type: "concierge",
+    name: "Wait In-line",
+  },
+  {
+    id: 18,
+    type: "shopping",
+    name: "Delivery Service",
+  },
+];
+export const AllServices = [
+  {
+    image: clean,
+    name: "Cleaning",
+    id: 1,
+  },
+  {
+    image: admin,
+    name: "Administrative Support",
+    id: 2,
+  },
+  {
+    image: desk,
+    name: "Concierge",
+    id: 3,
+  },
+  {
+    image: trolley,
+    name: "Shopping",
+    id: 4,
+  },
+  {
+    image: repair,
+    name: "Repair & Installation",
+    id: 5,
+  },
+  {
+    image: container,
+    name: "Moving & Transit",
+    id: 6,
   },
 ];

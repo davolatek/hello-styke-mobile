@@ -56,9 +56,9 @@ export const CompleteProfileScreen = ({ navigation }: CompleteProfileScreenProps
       formData.append("mimeType", "image/*");
       formData.append("multipartFile", values.img);
       formData.append("userId", user.id);
-      //  await dispatch(uploadPicture(formData)).then((res) => {
-      //   console.log(res)
-      //  })
+       await dispatch(uploadPicture(formData)).then((res) => {
+        console.log(res)
+       })
       console.log(payload);
       await dispatch(completeprofile(payload)).then((res) => {
         if (res.meta.requestStatus === "fulfilled") {
