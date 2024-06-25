@@ -381,3 +381,41 @@ export const AllServices = [
     id: 6,
   },
 ];
+
+export const Transactions = [
+  {
+    id: 1,
+    date: "Nov 26, 2023",
+    name: "Diana Russell",
+    amount: "23,000",
+    type: "inflow",
+  },
+  {
+    id: 2,
+    date: "Nov 28, 2023",
+    name: "Diana Russell",
+    amount: "44,000",
+    type: "outflow",
+  },
+  {
+    id: 3,
+    date: "Nov 30, 2023",
+    name: "Diana Russell",
+    amount: "200,000",
+    type: 'inflow'
+  },
+  {
+    id: 4,
+    date: "Dec 4, 2023",
+    name: "Diana Russell",
+    amount: "4,000",
+    type: 'inflow'
+  },
+  {
+    id: 5,
+    date: "Dec 9, 2023",
+    name: "Diana Russell",
+    amount: "2,000",
+    type: 'outflow'
+  },
+];

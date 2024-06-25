@@ -13,9 +13,22 @@ import { Button } from "../../../components/button";
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from "../../constants";
 import { InfoContent } from "../../../components/info";
 import { useState } from "react";
+import { AppStackScreenProps } from "../../navigation/app.roots.types";
+import { RootTabNavigationProp } from "../../navigation/bottom-tab.navigations";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { StykerTaskerStackParamList } from "../../navigation/styker/styker.tasker/styker.tasker.stack.navigation";
 
-export const EnterLocationScreen = () => {
+
+type JobFormScreenProps = NativeStackScreenProps<
+  StykerTaskerStackParamList,
+  "job_form"
+>;
+export const EnterLocationScreen = ({
+  navigation,
+}: JobFormScreenProps) => {
   const [visible, setVisible] = useState(false);
+  // const navigation = useNavigation<RootTabNavigationProp<'profile'>>();
   return (
     <>
       <PageLayout title="Enter Your Location" goBack>
@@ -54,17 +67,24 @@ export const EnterLocationScreen = () => {
       <Modal transparent={false} visible={visible}>
         <View style={styles.modalContainer}>
           <InfoContent
-          buttonTitle="Allow Notification"
-          link="Maybe Later"
-          title="Enable Notification"
-          onLinkPress={() => setVisible(false)}
-          text="Allow notification to receive real-time updates"
+            buttonTitle="Allow Notification"
+            link="Maybe Later"
+            title="Enable Notification"
+            onLinkPress={() => {
+              setVisible(false);
+            }}
+            text="Allow notification to receive real-time updates"
             icon={
               <>
                 <NotificationOutlined />
               </>
             }
-            onPress={() => null}
+            onPress={() => {
+              setVisible(false);
+              navigation.navigate('tab', {
+                screen: 'profile'
+              });
+            }}
           />
         </View>
       </Modal>

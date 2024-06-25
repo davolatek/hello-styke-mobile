@@ -3,6 +3,8 @@ export const lightThemeColors = {
     100: "#FFF",
     200: "#D9D9D9",
     300: "#F2F3F4",
+    400: '#F1F1F1',
+    500: 'rgba(255, 255, 255, 0.7)'
   },
   black: {
     100: "#000",
@@ -27,7 +29,8 @@ export const lightThemeColors = {
     400: "rgba(0, 0, 0, 0.5)",
     500: "rgba(0, 0, 0, 0.8)",
     600: "rgba(0, 0, 0, 0.20)",
-    700: '#BBC2D3'
+    700: '#BBC2D3',
+    800: 'rgba(217, 217, 217, 0.2)'
   },
   red: {
     100: "#F44336",
@@ -36,4 +39,7 @@ export const lightThemeColors = {
   green: {
     100: "#4CAF50",
   },
+  yellow: {
+    100: '#FFC107'
+  }
 };

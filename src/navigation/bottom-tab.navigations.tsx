@@ -2,10 +2,13 @@ import {
   BottomTabNavigationProp,
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
-import { CompositeNavigationProp } from "@react-navigation/native";
+import {
+  CompositeNavigationProp,
+  NavigatorScreenParams,
+} from "@react-navigation/native";
 import { AppRootStackParamsList } from "./app.roots.types";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { ProfileStack } from "./profile";
+import { ProfileStack, ProfileStackParamList } from "./profile";
 import {
   BookingIcon,
   CalendarIcon,
@@ -21,11 +24,12 @@ import { HomeStack } from "./Home-navigation";
 
 export type RootTabParamList = {
   Home: undefined;
-  profile: undefined;
-  booking: undefined;
+  profile: NavigatorScreenParams<ProfileStackParamList>;
+  bookings: undefined;
   calendar: undefined;
   inbox: undefined;
 };
+
 const tabBarIconMap: Record<
   string,
   ({ color, focused }: { color: string; focused: boolean }) => JSX.Element
@@ -45,12 +49,14 @@ const tabBarIconMap: Record<
   ),
 };
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<RootTabParamList>();
+
 export type RootTabNavigationProp<T extends keyof RootTabParamList> =
   CompositeNavigationProp<
     BottomTabNavigationProp<RootTabParamList, T>,
     NativeStackNavigationProp<AppRootStackParamsList>
   >;
+
 export const MyTabs = () => {
   const { colors } = useTheme();
   return (

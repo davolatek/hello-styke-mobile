@@ -28,7 +28,7 @@ import { useState } from "react";
 
 export const HomeWelcomeScreen = ({
   navigation,
-}: AppStackScreenProps<"home_stack">) => {
+}: AppStackScreenProps<'home_welcome_screen'>) => {
   const { user } = useAppSelector(({ userReducer }) => userReducer);
   console.log(user);
   const [show, setShow] = useState(false);
@@ -48,8 +48,8 @@ export const HomeWelcomeScreen = ({
             {user?.imageUrl ? (
               <Image
                 source={{ uri: user?.imageUrl }}
-                width={136.105}
-                height={136.105}
+                width={80.105}
+                height={80.105}
                 borderRadius={100}
               />
             ) : (
@@ -206,9 +206,14 @@ export const HomeWelcomeScreen = ({
                     title="Client Dashboard"
                     onPress={() => {
                       setShow(false);
-                      navigation.navigate("tabs", {
-                        screen: "Home",
-                      });
+                      // navigation.navigate("tabs", {
+                      //   screen: "Home",
+                      // });
+                      navigation.navigate('styker', {
+                        screen: 'client', params: {
+                          screen: 'Home'
+                        }
+                      })
                     }}
                   />
                 </View>
@@ -219,9 +224,11 @@ export const HomeWelcomeScreen = ({
                     title="Become a Styker"
                     onPress={() => {
                       setShow(false);
-                      navigation.navigate("home_stack", {
-                        screen: "tasker_screen",
-                      });
+                      navigation.navigate('styker', {
+                        screen: 'tasker', params: {
+                          screen: 'tasker_screen'
+                        }
+                      })
                     }}
                   />
                 </View>

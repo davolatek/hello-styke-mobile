@@ -5,10 +5,16 @@ import { DEVICE_HEIGHT } from "../../constants";
 import { HStack } from "native-base";
 import { Button } from "../../../components/button";
 import { AppStackScreenProps } from "../../navigation/app.roots.types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { StykerTaskerStackParamList } from "../../navigation/styker/styker.tasker/styker.tasker.stack.navigation";
 
+type TaskerScreenProps = NativeStackScreenProps<
+  StykerTaskerStackParamList,
+ 'tasker_screen'
+>;
 export const TaskerScreen = ({
   navigation,
-}: AppStackScreenProps<"home_stack">) => {
+}:TaskerScreenProps ) => {
   return (
     <View paddingTop={40} height={DEVICE_HEIGHT}>
       <View width="70%" marginX="auto" height={"80%"}>
@@ -59,9 +65,7 @@ export const TaskerScreen = ({
             <Button
               title="Get Started"
               onPress={() =>
-                navigation.navigate("home_stack", {
-                  screen: "forms",
-                })
+                navigation.navigate('forms')
               }
             />
           </View>

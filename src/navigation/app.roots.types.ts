@@ -7,6 +7,7 @@ import { AuthenticationStackParamsList } from "./onboarding";
 import { ProfileStackParamList } from "./profile";
 import { RootTabParamList } from "./bottom-tab.navigations";
 import { HomeStackParamList } from "./Home-navigation";
+import { StykerParamList } from "./styker/styker.root.navigation";
 
 export type AppStackScreenProps<T extends keyof AppRootStackParamsList> =
   NativeStackScreenProps<AppRootStackParamsList, T>;
@@ -18,4 +19,9 @@ export type AppRootStackParamsList = {
   tabs: NavigatorScreenParams<RootTabParamList>;
   home_stack: NavigatorScreenParams<HomeStackParamList>;
   Home: NavigatorScreenParams<HomeStackParamList>;
+
+
+  styker: NavigatorScreenParams<StykerParamList>;
+  home_welcome_screen: undefined
+  wallet: undefined
 };

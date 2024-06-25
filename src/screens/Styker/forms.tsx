@@ -8,8 +8,14 @@ import { Radio } from "../../../components/button/radio";
 import { Button } from "../../../components/button";
 import { AllServices, Services } from "../../../components/services";
 import { AppStackScreenProps } from "../../navigation/app.roots.types";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { StykerTaskerStackParamList } from "../../navigation/styker/styker.tasker/styker.tasker.stack.navigation";
 
-export const Forms = ({ navigation }: AppStackScreenProps<"home_stack">) => {
+type JobFormScreenProps = NativeStackScreenProps<
+  StykerTaskerStackParamList,
+  "job_form"
+>;
+export const Forms = ({ navigation }: JobFormScreenProps) => {
   const list = [
     {
       id: 1,
@@ -35,12 +41,9 @@ export const Forms = ({ navigation }: AppStackScreenProps<"home_stack">) => {
   };
   const handleNavigation = (name: string, image: string) => {
     if (active === 4) {
-      navigation.navigate("home_stack", {
-        screen: "job_form",
-        params: {
-          name,
-          image: {uri: image},
-        },
+      navigation.navigate("job_form", {
+        name,
+        image: image as any,
       });
     }
   };

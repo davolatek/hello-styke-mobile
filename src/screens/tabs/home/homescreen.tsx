@@ -46,7 +46,16 @@ export const HomeScreen = ({
               bg="white.100"
               style={styles.image}
             >
-              <PersonDark />
+              {user?.imageUrl ? (
+                <Image
+                  source={{ uri: user?.imageUrl }}
+                  style={{ width: "100%", height: "100%" }}
+                  resizeMode="center"
+                  borderRadius={100}
+                />
+              ) : (
+                <PersonDark />
+              )}
             </View>
             <View marginLeft={3}>
               <Text color="black.100" fontFamily="Poppins-Light" fontSize={12}>
@@ -129,13 +138,12 @@ export const HomeScreen = ({
                 key={elem.id}
                 style={styles.card}
                 onPress={() =>
-                  navigation.navigate('home_stack', {
+                  navigation.navigate("home_stack", {
                     screen: "one_service",
                     params: {
-                      name: elem.name
-                    }
+                      name: elem.name,
+                    },
                   })
-                  
                 }
               >
                 <View>{elem.image}</View>

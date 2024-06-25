@@ -36,6 +36,7 @@ const admin = require("../../assets/images/png/admin.png");
 const trolley = require("../../assets/images/png/trolley.png");
 const container = require("../../assets/images/png/container.png");
 const desk = require("../../assets/images/png/desk.png");
+const walletImg = require("../../assets/images/png/wallet-img.png");
 
 export {
   comment,
@@ -75,5 +76,6 @@ export {
   repair,
   trolley,
   container,
-  admin
+  admin,
+  walletImg,
 };

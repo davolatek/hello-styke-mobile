@@ -84,9 +84,7 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
                 // logout
                 // await saveItem('isLoggedIn', '')
                 if (userAuth.completed && userAuth.verified) {
-                  navigation.navigate("home_stack", {
-                    screen: "home_welcome_screen",
-                  });
+                  navigation.navigate('home_welcome_screen');
                 } else {
                   navigation.navigate("onboarding", {
                     screen: "complete_profile",

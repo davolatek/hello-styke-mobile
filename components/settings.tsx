@@ -8,6 +8,10 @@ import {
   Language,
   Moon,
   Help,
+  PortfolioIcon,
+  GuarantorIcon,
+  AccountIcon,
+  SettingIcon,
 } from "../assets/images/svg/icons";
 
 export const Settings = [
@@ -66,7 +70,80 @@ export const Settings = [
     id: 9,
   },
 ];
-
+export const TaskerSettings = [
+  {
+    name: "Personal Information",
+    icon: <Person2 />,
+    page: "personal_info",
+    id: 1,
+  },
+  {
+    name: "Portfolio",
+    icon: <PortfolioIcon />,
+    page: "",
+    id: 2,
+  },
+  {
+    name: "Bank Details",
+    icon: <Card />,
+    page: "bank_details",
+    id: 3,
+  },
+  {
+    name: "Wallet",
+    icon: <Card />,
+    page: "wallet",
+    id: 4,
+  },
+  {
+    name: "Guarantors Form",
+    icon: <GuarantorIcon />,
+    page: "guarantor_form",
+    id: 5,
+  },
+  {
+    name: "Account Verification",
+    icon: <AccountIcon />,
+    page: "acct_verification",
+    id: 6,
+  },
+  {
+    name: "Language",
+    icon: <Language />,
+    page: "#",
+    id: 7,
+  },
+  {
+    name: "Dark Mode",
+    icon: <Moon />,
+    page: "#",
+    id: 8,
+  },
+  {
+    name: "Invite Friends",
+    icon: <People />,
+    page: "invite",
+    id: 9,
+  },
+  {
+    name: "Help Center",
+    icon: <Help />,
+    page: "#",
+    id: 10,
+  },
+  {
+    name: "Settings",
+    icon: <SettingIcon />,
+    page: "#",
+    id: 11,
+  },
+  {
+    name: "Logout",
+    icon: <Logout />,
+    page: "#",
+    id: 12,
+  },
+];
 export const notificationList = [
   {
     name: "General Notification",

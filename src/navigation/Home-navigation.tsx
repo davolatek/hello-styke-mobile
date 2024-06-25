@@ -96,17 +96,14 @@ export const HomeStack = () => {
       <Stack.Screen name="notification" component={Notifications} />
       <Stack.Screen name="security" component={Security} />
       <Stack.Screen name="invite" component={Invite} />
-      <Stack.Screen
-        name="home_welcome_screen"
-        component={HomeWelcomeScreen as any}
-      />
+     
       <Stack.Screen name="tasker_screen" component={TaskerScreen as any} />
       <Stack.Screen name="forms" component={Forms as any} />
       <Stack.Screen name="job_form" component={JobForm as any} />
       <Stack.Screen name="location_page" component={LocationPage as any} />
       <Stack.Screen
         name="enter_location"
-        component={EnterLocationScreen}
+        component={EnterLocationScreen as any}
       />
     </Stack.Navigator>
   );
