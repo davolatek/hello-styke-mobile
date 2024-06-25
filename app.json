@@ -29,12 +29,20 @@
         "projectId": "488b1a03-faff-40ab-b514-a7802d207ccf"
       }
     },
-    "owner": "stykeapp",
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/488b1a03-faff-40ab-b514-a7802d207ccf"
-    }
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ]
+  },
+  "owner": "stykeapp",
+  "runtimeVersion": {
+    "policy": "appVersion"
+  },
+  "updates": {
+    "url": "https://u.expo.dev/488b1a03-faff-40ab-b514-a7802d207ccf"
   }
 }
