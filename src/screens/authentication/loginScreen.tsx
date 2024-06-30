@@ -29,7 +29,6 @@ import { useAppSelector, useAppThunkDispatch } from "../../redux/store";
 import { signIn } from "../../redux/auth/thunkAction";
 import { AuthUser } from "../../redux/auth/types";
 import { DEVICE_HEIGHT } from "../../constants";
-import { PickImage } from "../../../components/customs/pick-image";
 
 export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
   const { colors } = useTheme();
@@ -85,7 +84,7 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
                 // logout
                 // await saveItem('isLoggedIn', '')
                 if (userAuth.completed && userAuth.verified) {
-                  navigation.navigate("home_welcome_screen");
+                  navigation.navigate('home_welcome_screen');
                 } else {
                   navigation.navigate("onboarding", {
                     screen: "complete_profile",
@@ -290,10 +289,6 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
                 Sign up
               </Text>
             </TouchableOpacity>
-            <PickImage
-              accessor={<Text>select </Text>}
-              onPickImage={(e) => console.log(e, "ee")}
-            />
           </View>
         </AuthLayout>
       </ScrollView>
