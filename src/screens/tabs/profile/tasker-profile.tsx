@@ -1,17 +1,12 @@
 import { HStack, VStack } from "native-base";
-import {
-  Ellipse1,
-  Ellipse2,
-  Ellipse3,
-  Ellipse4,
-  Ellipse5,
-  PersonDark,
-} from "../../../../assets/images/svg/icons";
+import { Ellipse5, PersonDark } from "../../../../assets/images/svg/icons";
 import { Text, View } from "../../../../components/customs";
 import { PageLayout } from "../../../../components/layout.tsx/page-layout";
 import {
   FlatList,
   Image,
+  Modal,
+  Platform,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
@@ -21,8 +16,10 @@ import Svg, { Circle } from "react-native-svg";
 import { FontAwesome } from "@expo/vector-icons";
 import { TaskerSettings } from "../../../../components/settings";
 import { AppStackScreenProps } from "../../../navigation/app.roots.types";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { StykerTaskerStackParamList } from "../../../navigation/styker/styker.tasker/styker.tasker.stack.navigation";
+import { useState } from "react";
+import { MenuDropdown } from "../../../../components/modal/menu-dropdown";
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from "../../../constants";
+import { Button } from "../../../../components/button";
 
 export const TaskerProfile = ({
   navigation,
@@ -31,11 +28,13 @@ export const TaskerProfile = ({
   const radius = (48 - 5) / 2;
   const circumference = radius * 2 * Math.PI;
   const progressOffset = circumference - (70 / 100) * circumference;
+  const [openModal, setOpenModal] = useState(false);
+
   return (
-    <View style={{ flex: 1 }}>
+   
       <PageLayout title="Your Profile" goBack={true}>
         <ScrollView
-          style={{ marginBottom: 170 }}
+          style={{ marginBottom: Platform.OS === 'ios' ? 170 : 260 }}
           showsVerticalScrollIndicator={false}
         >
           <View width={"90%"} marginX="auto">
@@ -132,16 +131,24 @@ export const TaskerProfile = ({
               <FlatList
                 data={TaskerSettings}
                 contentContainerStyle={styles.container}
-                keyExtractor={(item) => item.id.toString()}
+                keyExtractor={(item) => item.name}
                 renderItem={({ item }) => (
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate("styker", {
-                        screen: "tasker",
-                        params: {
-                          screen: item?.page as any,
-                        },
-                      });
+                      item.name === "Wallet"
+                        ? navigation.navigate("wallet")
+                        : item.name === "Invite Friends"
+                        ? navigation.navigate("styker", {
+                            screen: "invite",
+                          })
+                        : item.name === "Logout"
+                        ? setOpenModal(true)
+                        : navigation.navigate("styker", {
+                            screen: "tasker",
+                            params: {
+                              screen: item?.page as any,
+                            },
+                          });
                     }}
                   >
                     <View
@@ -169,15 +176,71 @@ export const TaskerProfile = ({
                   </TouchableOpacity>
                 )}
               />
+              <Modal animationType='slide' transparent={true} visible={openModal}>
+                <View style={styles.modalContainer}>
+                  <View style={styles.modal}>
+                    <Text
+                      color="red.300"
+                      fontFamily="Poppins-Medium"
+                      textAlign="center"
+                    >
+                      Logout
+                    </Text>
+                    <View
+                      marginTop={3}
+                      borderBottomColor="grey.100"
+                      borderBottomWidth={1}
+                    />
+                    <VStack>
+                      <Text textAlign="center" paddingTop={5} fontSize={15}>
+                        Are you sure you want to logout?
+                      </Text>
+                      <HStack
+                        width="100%"
+                        style={{ gap: 10 }}
+                        justifyContent="center"
+                      >
+                        <View width="48%">
+                          <Button
+                            textColor="blue.300"
+                            color="blue.400"
+                            title="Cancel"
+                            onPress={() => setOpenModal(false)}
+                          />
+                        </View>
+                        <View width="48%">
+                          <Button title="Yes, Logout" onPress={() => null} />
+                        </View>
+                      </HStack>
+                    </VStack>
+                  </View>
+                </View>
+              </Modal>
             </View>
           </View>
         </ScrollView>
       </PageLayout>
-    </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     gap: 25,
+  },
+  modalContainer: {
+    width: DEVICE_WIDTH,
+    height: DEVICE_HEIGHT,
+    backgroundColor: "rgba(0, 0, 0, 0.80)",
+  },
+  modal: {
+    width: "100%",
+    marginLeft: "auto",
+    marginRight: "auto",
+    backgroundColor: "#FFF",
+    height: 300,
+    paddingTop: 40,
+    paddingHorizontal: 30,
+    paddingBottom: 40,
+    marginTop: "auto",
+    borderRadius: 30,
   },
 });

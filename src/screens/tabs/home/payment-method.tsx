@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, Platform } from "react-native";
 import { Text, View } from "../../../../components/customs";
 import { PageLayout } from "../../../../components/layout.tsx/page-layout";
 import { PaymentOptions } from "../../../../components/payment-options";
@@ -18,7 +18,7 @@ export const PaymentMethod = ({ navigation }: paymentMthodScreenProps) => {
 
   return (
     <PageLayout color="white.300" title="Payment Method" goBack={true}>
-      <View paddingX={5} paddingTop={5} height={DEVICE_HEIGHT-250}>
+      <View paddingX={5} paddingTop={5} height={Platform.OS ==='ios' ? DEVICE_HEIGHT-250 : DEVICE_HEIGHT-230}>
         <Text fontFamily="Poppins-Medium">Select your payment method</Text>
         <FlatList
           style={{ marginTop: 40 }}

@@ -21,3 +21,32 @@ export const TabList = [
   },
 ];
 
+export const JobTab: {
+  name: string,
+  id: number
+}[] = [
+  {
+    name: "Pending",
+    id: 1,
+  },
+  {
+    name: "Awaiting",
+    id: 2,
+  },
+  {
+    name: "Upcoming",
+    id: 3,
+  },
+  {
+    name: "Ongoing",
+    id: 4,
+  },
+  {
+    name: "Completed",
+    id: 5,
+  },
+  {
+    name: "Cancelled",
+    id: 6,
+  },
+];

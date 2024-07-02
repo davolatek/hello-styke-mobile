@@ -16,13 +16,13 @@ import {
   GuarantorForm,
   JobForm,
   LocationPage,
+  OnePendingJob,
   PersonalInfo,
   TaskerBankDetails,
   TaskerScreen,
 } from "../../../screens/Styker";
 import { ImageSourcePropType } from "react-native";
 import { TaskerTab, TaskerTabParamList } from "./styker.tasker.navigation";
-import { Wallet } from "../../../screens/Styker/wallet";
 
 export type StykerTaskerStackParamList = {
   tasker_screen: undefined;
@@ -36,9 +36,9 @@ export type StykerTaskerStackParamList = {
   tab: NavigatorScreenParams<TaskerTabParamList>;
   personal_info: undefined;
   bank_details: undefined;
-  wallet: undefined;
   guarantor_form: undefined;
   acct_verification: undefined;
+  one_pending_job: undefined;
 };
 
 export type HomeStackScreenProps<T extends keyof StykerTaskerStackParamList> =
@@ -66,9 +66,9 @@ export const StykerTaskerStack = () => {
       <Stack.Screen name="tab" component={TaskerTab as any} />
       <Stack.Screen name="personal_info" component={PersonalInfo} />
       <Stack.Screen name="bank_details" component={TaskerBankDetails} />
-      <Stack.Screen name="wallet" component={Wallet} />
       <Stack.Screen name="guarantor_form" component={GuarantorForm} />
       <Stack.Screen name="acct_verification" component={AccountVerification} />
+      <Stack.Screen name="one_pending_job" component={OnePendingJob} />
     </Stack.Navigator>
   );
 };

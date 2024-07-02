@@ -35,7 +35,7 @@ export const GuarantorForm = () => {
   };
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView
         style={{ paddingBottom: 100 }}

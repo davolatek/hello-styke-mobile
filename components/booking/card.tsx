@@ -66,7 +66,7 @@ export const Card = ({ name, service, type, id, image }: props) => {
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="center"
-                borderRadius="50%"
+                borderRadius={50}
               >
                 <Image
                   source={comment}

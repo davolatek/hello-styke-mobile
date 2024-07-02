@@ -3,7 +3,7 @@ import { Arrow } from "../../assets/images/svg/icons/arrow";
 import { DEVICE_HEIGHT } from "../../src/constants";
 import { Text, View, ViewProps } from "../customs";
 import { useTheme } from "native-base";
-import { TouchableOpacity, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 type layoutProps = {
@@ -20,7 +20,7 @@ export const PageLayout = ({
   children,
   icon,
   withPadding = true,
-  color = 'white.100'
+  color = "white.100",
 }: layoutProps) => {
   const { colors } = useTheme();
   const navigation = useNavigation();
@@ -30,7 +30,7 @@ export const PageLayout = ({
       safeArea
       bgColor={color}
       width="100%"
-      height={DEVICE_HEIGHT}
+      height={Platform.OS === "ios" ? DEVICE_HEIGHT : DEVICE_HEIGHT + 100}
     >
       <View
         flexDirection="row"

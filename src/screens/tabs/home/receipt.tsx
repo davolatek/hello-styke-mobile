@@ -1,4 +1,4 @@
-import { ScrollView, TouchableOpacity } from "react-native";
+import { Platform, ScrollView, TouchableOpacity } from "react-native";
 import { Text, View } from "../../../../components/customs";
 import { PageLayout } from "../../../../components/layout.tsx/page-layout";
 import { StyleSheet } from "react-native";
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     marginBottom: 20,
-    height: DEVICE_HEIGHT - 280,
+    height: Platform.OS === "ios" ? DEVICE_HEIGHT - 280 : DEVICE_HEIGHT - 240,
   },
   left: {
     gap: 4,

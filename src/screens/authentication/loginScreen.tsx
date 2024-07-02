@@ -110,7 +110,7 @@ export const Login = ({ navigation }: AppStackScreenProps<"onboarding">) => {
   return (
     <KeyboardAvoidingView
       flex={1}
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <AuthLayout title={`Login to your \n Account`} goBack={true}>

@@ -17,6 +17,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
+  Platform,
 } from "react-native";
 import { useState } from "react";
 import { ChatMessages } from "../../../../components/services";
@@ -28,7 +29,9 @@ type InboxScreenProps = NativeStackScreenProps<
   InboxStackParamList,
   "inbox_screen"
 >;
-export const InboxScreen = ({ navigation }: AppStackScreenProps<'home_stack'>) => {
+export const InboxScreen = ({
+  navigation,
+}: AppStackScreenProps<"home_stack">) => {
   const [active, setActive] = useState("Chats");
   const data = ["Chats", "Calls"];
   const handleActive = (id: string) => {
@@ -93,18 +96,19 @@ export const InboxScreen = ({ navigation }: AppStackScreenProps<'home_stack'>) =
               data={ChatMessages}
               renderItem={({ item }) => (
                 <ChatLayout
-                onPress={() => navigation.navigate( 'home_stack', {
-                  screen: 'chat'
-                }
-                )}
+                  onPress={() =>
+                    navigation.navigate("home_stack", {
+                      screen: "chat",
+                    })
+                  }
                   icon={
                     <View>
-                      <View position="relative">
+                      <View position="relative" width="100%">
                         <Circle />
                         <Text
                           position="absolute"
-                          left="25%"
-                          top="-10%"
+                          left={Platform.OS === 'ios' ? "25%" : "33%"}
+                          top={Platform.OS === 'android' ? "-5%" : "-10%"}
                           fontSize={11}
                           color="white.100"
                         >
@@ -141,11 +145,14 @@ export const InboxScreen = ({ navigation }: AppStackScreenProps<'home_stack'>) =
               data={ChatMessages}
               renderItem={({ item }) => (
                 <ChatLayout
-                
                   icon={
-                    <TouchableOpacity onPress={() => navigation.navigate('home_stack', {
-                      screen: 'call_screen'
-                    })}>
+                    <TouchableOpacity
+                      onPress={() =>
+                        navigation.navigate("home_stack", {
+                          screen: "call_screen",
+                        })
+                      }
+                    >
                       <Call />
                     </TouchableOpacity>
                   }

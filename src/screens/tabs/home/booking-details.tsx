@@ -1,6 +1,7 @@
 import { PageLayout } from "../../../../components/layout.tsx/page-layout";
 import {
   FlatList,
+  Platform,
   StyleSheet,
   TouchableOpacity,
   TouchableWithoutFeedback,
@@ -48,7 +49,7 @@ const BookingDetails = ({ route, navigation }: BookingDetailsProps) => {
       }
     >
       <ScrollView
-        height={DEVICE_HEIGHT - 280}
+        height={Platform.OS === 'ios' ? DEVICE_HEIGHT - 280 : DEVICE_HEIGHT - 240}
         showsVerticalScrollIndicator={false}
         marginBottom={4}
       >
@@ -89,7 +90,7 @@ const BookingDetails = ({ route, navigation }: BookingDetailsProps) => {
                   height={37}
                   width={37}
                   bgColor="pink.200"
-                  borderRadius="full"
+                  borderRadius={50}
                 >
                   <MinusIcon />
                 </HStack>
@@ -104,7 +105,7 @@ const BookingDetails = ({ route, navigation }: BookingDetailsProps) => {
                   alignItems="center"
                   height={37}
                   width={37}
-                  borderRadius="full"
+                  borderRadius={50}
                 >
                   <PlusIcon />
                 </HStack>
@@ -182,7 +183,7 @@ const BookingDetails = ({ route, navigation }: BookingDetailsProps) => {
                 alignItems="center"
                 height={37}
                 width={37}
-                borderRadius="full"
+                borderRadius={50}
               >
                 <PlusIcon />
               </HStack>

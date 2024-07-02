@@ -21,6 +21,7 @@ import {
   import { CalendarScreen, HomeScreen } from "../../screens";
   import { InboxStack } from "../inbox";
   import { HomeStack } from "../Home-navigation";
+import { Platform } from "react-native";
   
   export type ClientTabParamList = {
     Home: undefined;
@@ -69,7 +70,7 @@ import {
           tabBarActiveTintColor: colors.blue[100],
           tabBarInactiveTintColor: (colors as any).grey[400],
           tabBarStyle: {
-            height: 90,
+            height: Platform.OS === 'android' ? 70 : 90,
             backgroundColor: colors.white[100],
             borderTopWidth: 0,
             paddingTop: 20,

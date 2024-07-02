@@ -9,7 +9,7 @@ import { DEVICE_HEIGHT } from "../../constants";
 export const TaskerBankDetails = () => {
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <PageLayout title="Bank Details" goBack={true}>

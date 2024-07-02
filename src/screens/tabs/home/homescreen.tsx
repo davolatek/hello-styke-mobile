@@ -11,10 +11,7 @@ import { Input } from "native-base";
 import { Services } from "../../../../components/services";
 import { box } from "../../../utils/assets";
 import { BottomHomeTab } from "../../../../components/bottom-tab";
-import { useState } from "react";
 import { useAppSelector } from "../../../redux/store";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { HomeStackParamList } from "../../../navigation/Home-navigation";
 import { AppStackNavigationProp } from "../../../navigation/app.roots.types";
 
 export const HomeScreen = ({

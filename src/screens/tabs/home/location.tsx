@@ -8,6 +8,7 @@ import { Button } from "../../../../components/button";
 import { Ionicons } from "@expo/vector-icons";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { HomeStackParamList } from "../../../navigation/Home-navigation";
+import { Platform } from "react-native";
 
 type locationScreenProps = NativeStackScreenProps<
   HomeStackParamList,
@@ -31,7 +32,7 @@ export const Location = ({ route, navigation }: locationScreenProps) => {
       </PageLayout>
       <View
         position="absolute"
-        bottom={0}
+        bottom={Platform.OS === 'ios'? 0 : -50}
         borderTopRadius={20}
         zIndex={100}
         bgColor="white.100"

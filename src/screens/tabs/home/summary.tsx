@@ -1,4 +1,4 @@
-import { ScrollView } from "react-native";
+import { Platform, ScrollView } from "react-native";
 import { Text, View } from "../../../../components/customs";
 import { PageLayout } from "../../../../components/layout.tsx/page-layout";
 import { StyleSheet } from "react-native";
@@ -201,8 +201,8 @@ export const ReviewSummary = ({ navigation }: reviewSummarySCreenProps) => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    marginBottom: 3,
-    height: DEVICE_HEIGHT - 280,
+    marginBottom: 20,
+    height: Platform.OS === 'ios' ? DEVICE_HEIGHT - 280 : DEVICE_HEIGHT - 240,
   },
   left: {
     gap: 4,

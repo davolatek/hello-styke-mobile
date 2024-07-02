@@ -42,7 +42,7 @@ export const PersonalInfo = () => {
   };
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <Layout title="Personal Information" goBack={true}>

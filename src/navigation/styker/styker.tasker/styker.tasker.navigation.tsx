@@ -23,9 +23,11 @@ import { InboxStack } from "../../inbox";
 import { HomeStack } from "../../Home-navigation";
 import { StykerParamList } from "../styker.root.navigation";
 import { StykerTaskerStackParamList } from "./styker.tasker.stack.navigation";
+import { TaskerHome } from "../../../screens/tabs/home/tasker-home";
+import { Platform } from "react-native";
 
 export type TaskerTabParamList = {
-  // Home: undefined;
+  Home: undefined;
   profile: undefined;
   // bookings: undefined;
   // calendar: undefined;
@@ -36,9 +38,9 @@ const tabBarIconMap: Record<
   string,
   ({ color, focused }: { color: string; focused: boolean }) => JSX.Element
 > = {
-  // Home: ({ color, focused }) => {
-  //   return <HomeIcon focused={focused} color={color} />;
-  // },
+  Home: ({ color, focused }) => {
+    return <HomeIcon focused={focused} color={color} />;
+  },
   // bookings: ({ color, focused }) => (
   //   <BookingIcon color={color} focused={focused} />
   // ),
@@ -70,13 +72,14 @@ export const TaskerTab = () => {
         tabBarActiveTintColor: colors.blue[100],
         tabBarInactiveTintColor: (colors as any).grey[400],
         tabBarStyle: {
-          height: 90,
+          height: Platform.OS === 'android' ? 70 : 90,
           backgroundColor: colors.white[100],
           borderTopWidth: 0,
           paddingTop: 20,
         },
       })}
     >
+      <Tab.Screen name="Home" component={TaskerHome as any} />
       <Tab.Screen name="profile" component={TaskerProfile as any} />
     </Tab.Navigator>
   );

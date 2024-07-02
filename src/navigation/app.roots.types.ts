@@ -20,8 +20,8 @@ export type AppRootStackParamsList = {
   home_stack: NavigatorScreenParams<HomeStackParamList>;
   Home: NavigatorScreenParams<HomeStackParamList>;
 
-
   styker: NavigatorScreenParams<StykerParamList>;
-  home_welcome_screen: undefined
-  wallet: undefined
+  home_welcome_screen: undefined;
+  wallet: undefined;
+  invite: undefined;
 };

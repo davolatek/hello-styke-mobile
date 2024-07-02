@@ -15,6 +15,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  ScrollView,
+  KeyboardAvoidingView,
 } from "react-native";
 import { SenderLayout, ReceiverLayout } from "../../../../components/Cards";
 
@@ -29,13 +31,13 @@ const styles = StyleSheet.create({
     height: 57,
     justifyContent: "center",
     alignContent: "center",
-    paddingTop: 20,
+    paddingTop: Platform.OS === "ios" ? 20 : 8,
     width: "85%",
     backgroundColor: "#F2F3F4",
     fontFamily: "Poppins-Light",
   },
 });
-type chatScreenProps = NativeStackScreenProps<HomeStackParamList, 'chat'>
+type chatScreenProps = NativeStackScreenProps<HomeStackParamList, "chat">;
 export const Chat = () => {
   const { colors } = useTheme();
   const [messages, setMessages] = useState<Array<any>>([]);
@@ -78,122 +80,125 @@ export const Chat = () => {
   );
 
   return (
-    <PageLayout
-      title="Niana Fend"
-      goBack
-      icon={
-        <HStack justifyContent="center" alignItems="center" space={3}>
-          <TouchableOpacity>
-            <Phone />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <MenuIcon />
-          </TouchableOpacity>
-        </HStack>
-      }
-    >
-      <View
-        justifyContent="center"
-        bgColor={colors.pink[100]}
-        alignItems="center"
-        width={24}
-        paddingLeft={5}
-        paddingRight={5}
-        height={10}
-        margin="auto"
-        marginTop={4}
-        borderRadius={4}
-      >
-        <Text
-          textAlign="center"
-          fontFamily="Poppins-Medium"
-          fontSize={13}
-          color={colors.blue[100]}
-          paddingBottom={1}
-        >
-          Today
-        </Text>
-      </View>
-      <View
-        padding={6}
-        safeAreaBottom
-        height={DEVICE_HEIGHT - (Platform.OS === "android" ? 145 : 100)}
-      >
-        <GiftedChat
-          messages={messages}
-          renderMessage={(message: MessageProps<IMessage>) => {
-            return (
-              <>
-                {message.currentMessage?.user._id === 2 ? (
-                  <SenderLayout
-                    date={
-                      new Date(
-                        message.currentMessage?.createdAt || new Date()
-                      ) as any
-                    }
-                    text={message.currentMessage?.text as string}
-                  />
-                ) : (
-                  <ReceiverLayout
-                    date={
-                      new Date(
-                        message.currentMessage?.createdAt || new Date()
-                      ) as any
-                    }
-                    text={message.currentMessage?.text as string}
-                  />
-                )}
-              </>
-            );
-          }}
-          renderInputToolbar={(props: InputToolbarProps<IMessage>) => (
-            <HStack
-              width="full"
-              justifyContent="space-between"
-              alignItems="center"
-              position="relative"
-              height={59}
-              borderColor={colors.amber[100]}
-              borderRadius={10}
-              borderWidth={0.8}
-              bgColor="white.100"
-            >
-              <TextInput
-                style={styles.input}
-                value={textInputValue}
-                onChangeText={setTextInputValue}
-                placeholder="Type your message"
-                multiline
-              />
-              <TouchableOpacity
-                onPress={() => {
-                  onSend(textInputValue);
-                }}
-                style={{ position: "absolute", right: 1 }}
-              >
-                <HStack
-                  width={57}
-                  height={57}
-                  borderRadius={5}
-                  justifyContent="center"
-                  alignItems="center"
-                  bgColor="blue.200"
-                >
-                  <Ionicons
-                    color={colors.white[100]}
-                    size={30}
-                    name="paper-plane-sharp"
-                  />
-                </HStack>
+
+      <ScrollView>
+        <PageLayout
+          title="Niana Fend"
+          goBack
+          icon={
+            <HStack justifyContent="center" alignItems="center" space={3}>
+              <TouchableOpacity>
+                <Phone />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <MenuIcon />
               </TouchableOpacity>
             </HStack>
-          )}
-          user={{
-            _id: 1,
-          }}
-        />
-        <View height={16} />
-      </View>
-    </PageLayout>
+          }
+        >
+          <View
+            justifyContent="center"
+            bgColor={colors.pink[100]}
+            alignItems="center"
+            width={24}
+            paddingLeft={5}
+            paddingRight={5}
+            height={10}
+            margin="auto"
+            marginTop={4}
+            borderRadius={4}
+          >
+            <Text
+              textAlign="center"
+              fontFamily="Poppins-Medium"
+              fontSize={13}
+              color={colors.blue[100]}
+              paddingBottom={1}
+            >
+              Today
+            </Text>
+          </View>
+          <View
+            padding={6}
+            safeAreaBottom
+            height={DEVICE_HEIGHT - (Platform.OS === "android" ? 145 : 100)}
+          >
+            <GiftedChat
+              messages={messages}
+              renderMessage={(message: MessageProps<IMessage>) => {
+                return (
+                  <>
+                    {message.currentMessage?.user._id === 2 ? (
+                      <SenderLayout
+                        date={
+                          new Date(
+                            message.currentMessage?.createdAt || new Date()
+                          ) as any
+                        }
+                        text={message.currentMessage?.text as string}
+                      />
+                    ) : (
+                      <ReceiverLayout
+                        date={
+                          new Date(
+                            message.currentMessage?.createdAt || new Date()
+                          ) as any
+                        }
+                        text={message.currentMessage?.text as string}
+                      />
+                    )}
+                  </>
+                );
+              }}
+              renderInputToolbar={(props: InputToolbarProps<IMessage>) => (
+                <HStack
+                  width="full"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  position="relative"
+                  height={59}
+                  borderColor={colors.amber[100]}
+                  borderRadius={10}
+                  borderWidth={0.8}
+                  bgColor="white.100"
+                >
+                  <TextInput
+                    style={styles.input}
+                    value={textInputValue}
+                    onChangeText={setTextInputValue}
+                    placeholder="Type your message"
+                    multiline
+                  />
+                  <TouchableOpacity
+                    onPress={() => {
+                      onSend(textInputValue);
+                    }}
+                    style={{ position: "absolute", right: 1 }}
+                  >
+                    <HStack
+                      width={57}
+                      height={57}
+                      borderRadius={5}
+                      justifyContent="center"
+                      alignItems="center"
+                      bgColor="blue.200"
+                    >
+                      <Ionicons
+                        color={colors.white[100]}
+                        size={30}
+                        name="paper-plane-sharp"
+                      />
+                    </HStack>
+                  </TouchableOpacity>
+                </HStack>
+              )}
+              user={{
+                _id: 1,
+              }}
+            />
+            <View height={16} />
+          </View>
+        </PageLayout>
+      </ScrollView>
   );
 };

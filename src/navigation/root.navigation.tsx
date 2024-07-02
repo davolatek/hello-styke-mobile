@@ -7,7 +7,7 @@ import { useLayoutEffect, useState } from "react";
 import * as SplasScreen from "expo-splash-screen";
 import { HomeStack } from "./Home-navigation";
 import { StykerNavigator } from "./styker/styker.root.navigation";
-import { HomeWelcomeScreen } from "../screens";
+import { HomeWelcomeScreen, Invite } from "../screens";
 import { Wallet } from "../screens/Styker/wallet";
 
 // SplasScreen.preventAutoHideAsync();
@@ -44,6 +44,8 @@ export const RootNavigator = () => {
         component={HomeWelcomeScreen as any}
       />
       <Stack.Screen name="wallet" component={Wallet as any} />
+      <Stack.Screen name="invite" component={Invite} />
+
     </Stack.Navigator>
   );
 };

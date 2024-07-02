@@ -97,7 +97,7 @@ export const EditProfileScreen = ({
   return (
     <KeyboardAvoidingView
       flex={1}
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <Layout title="Edit Profile" goBack={true}>

@@ -100,7 +100,7 @@ export const CompleteProfileScreen = ({ navigation }: CompleteProfileScreenProps
   return (
     <KeyboardAvoidingView
       flex={1}
-      behavior={Platform.OS === "ios" ? "height" : "padding"}
+      behavior={Platform.OS === "ios" ? "height" : "height"}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <Layout title="My Profile" goBack={true}>

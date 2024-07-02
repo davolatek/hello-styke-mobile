@@ -80,8 +80,8 @@ export const Input = ({
           setIsInputFocused(false);
           otherProps.onBlur && otherProps.onBlur(e);
         }}
-        height="60px"
-        borderRadius="10px"
+        height={60}
+        borderRadius={10}
         marginTop="6"
         {...otherProps}
       />

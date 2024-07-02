@@ -61,7 +61,7 @@ export const BottomHomeTab = () => {
           renderItem={({ item }) => (
             <ServiceCard
               name={item.name}
-              image={item.image}
+              image={item.image as any}
               service={item.service}
               bookmarked={item.bookmarked}
               pay={item.pay}

@@ -33,7 +33,7 @@ export const CallScreen = ({navigation}: callScreenProps) => {
             }}
           >
             <Image
-              borderRadius={"100%"}
+              borderRadius={50}
               alt=""
               source={lady}
               style={{ width: 197, height: 197, marginTop: 23 }}

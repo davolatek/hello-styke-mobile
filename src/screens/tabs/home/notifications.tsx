@@ -27,7 +27,6 @@ export const Notifications = () => {
                   alignItems="center"
                   style={{ gap: 12 }}
                 >
- 
                   <Text
                     fontSize={15}
                     fontFamily="Poppins-Regular"
@@ -37,33 +36,33 @@ export const Notifications = () => {
                   </Text>
                 </View>
                 <View>
-                    <Switch
-                      value={true}
-                      onValueChange={(val) => console.log(val)}
-                      disabled={false}
-                      activeText={"On"}
-                      inActiveText={"Off"}
-                      circleSize={24}
-                      barHeight={26}
-                      circleBorderActiveColor="#003E9A"
-                      backgroundActive={"#003E9A"}
-                      backgroundInactive={"gray"}
-                      circleActiveColor={"white"}
-                      circleInActiveColor={"white"}
-                      changeValueImmediately={true} 
-                      innerCircleStyle={{
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }} 
-                      outerCircleStyle={{}}
-                      renderActiveText={false}
-                      renderInActiveText={false}
-                      switchLeftPx={2} 
-                      switchRightPx={2} 
-                      switchWidthMultiplier={2} 
-                      switchBorderRadius={30} 
-                    />
-                  </View>
+                  <Switch
+                    value={true}
+                    onValueChange={(val) => console.log(val)}
+                    disabled={false}
+                    activeText={"On"}
+                    inActiveText={"Off"}
+                    circleSize={24}
+                    barHeight={26}
+                    circleBorderActiveColor="#003E9A"
+                    backgroundActive={"#003E9A"}
+                    backgroundInactive={"gray"}
+                    circleActiveColor={"white"}
+                    circleInActiveColor={"white"}
+                    changeValueImmediately={true}
+                    innerCircleStyle={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    outerCircleStyle={{}}
+                    renderActiveText={false}
+                    renderInActiveText={false}
+                    switchLeftPx={2}
+                    switchRightPx={2}
+                    switchWidthMultiplier={2}
+                    switchBorderRadius={30}
+                  />
+                </View>
               </View>
             </TouchableOpacity>
           )}

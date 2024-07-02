@@ -52,7 +52,19 @@ export const Services = [
   },
 ];
 
-export const PopularServices = [
+export const PopularServices: {
+  image: string;
+  id: number;
+  name: string;
+  pay: string;
+  rating: string;
+  review: string;
+  category: string;
+  page: string;
+  bookmarked: boolean;
+  service: string;
+  status: string;
+}[] = [
   {
     image: cleaner,
     id: 1,
@@ -64,6 +76,7 @@ export const PopularServices = [
     category: "cleaner",
     page: "Cleaning",
     bookmarked: true,
+    status: "pending",
   },
   {
     image: painter,
@@ -76,6 +89,7 @@ export const PopularServices = [
     category: "painter",
     page: "Cleaning",
     bookmarked: false,
+    status: "pending",
   },
   {
     image: drycleaner,
@@ -88,6 +102,7 @@ export const PopularServices = [
     category: "cleaner",
     page: "Shopping",
     bookmarked: false,
+    status: "upcoming",
   },
   {
     image: driver,
@@ -100,6 +115,7 @@ export const PopularServices = [
     category: "driver",
     page: "Moving & Transit",
     bookmarked: true,
+    status: "cancelled",
   },
   {
     image: painter,
@@ -112,6 +128,98 @@ export const PopularServices = [
     category: "ac repair",
     page: "Administrative support",
     bookmarked: true,
+    status: "completed",
+  },
+  {
+    image: cleaner,
+    id: 6,
+    name: "Dora Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "ongoing",
+  },
+  {
+    image: drycleaner,
+    id: 7,
+    name: "Abel Abel",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "ongoing",
+  },
+  {
+    image: driver,
+    id: 8,
+    name: "Mike Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "ongoing",
+  },
+  {
+    image: painter,
+    id: 9,
+    name: "Mike Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "awaiting",
+  },
+  {
+    image: painter,
+    id: 10,
+    name: "Mike Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "completed",
+  },
+  {
+    image: painter,
+    id: 11,
+    name: "Mike Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "cancelled",
+  },
+  {
+    image: painter,
+    id: 12,
+    name: "Mike Abdul",
+    service: "Plumber",
+    pay: "32,000",
+    rating: "4.0",
+    review: "1.2k",
+    category: "ac repair",
+    page: "Administrative support",
+    bookmarked: true,
+    status: "awaiting",
   },
 ];
 export const reviews = [
@@ -402,20 +510,20 @@ export const Transactions = [
     date: "Nov 30, 2023",
     name: "Diana Russell",
     amount: "200,000",
-    type: 'inflow'
+    type: "inflow",
   },
   {
     id: 4,
     date: "Dec 4, 2023",
     name: "Diana Russell",
     amount: "4,000",
-    type: 'inflow'
+    type: "inflow",
   },
   {
     id: 5,
     date: "Dec 9, 2023",
     name: "Diana Russell",
     amount: "2,000",
-    type: 'outflow'
+    type: "outflow",
   },
 ];
