@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { RootNavigator } from "./root.navigation";
 import { useLoadedFonts } from "../resources/fonts";
-import { ReactNode, useCallback } from "react";
+import { ReactNode, useCallback } from "react"
 import * as SplashScreen from "expo-splash-screen";
 import { NativeBaseProvider } from "native-base";
 import { lightTheme } from "../theme";

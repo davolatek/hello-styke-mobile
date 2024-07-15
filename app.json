@@ -15,13 +15,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdetifier": "com.styke_app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.stykeapp.stykeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,9 +34,7 @@
       }
     },
     "owner": "stykeapp",
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.0",
     "updates": {
       "url": "https://u.expo.dev/488b1a03-faff-40ab-b514-a7802d207ccf"
     }
