@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdetifier": "com.styke_app"
+      "bundleIdentifier": "com.stykeapp.stykeapp"
     },
     "android": {
       "adaptiveIcon": {
